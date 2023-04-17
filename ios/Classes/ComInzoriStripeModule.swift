@@ -41,72 +41,108 @@ class ComInzoriStripeModule: TiModule {
         debugPrint("[DEBUG] \(self) loaded")
     }
        
-    @objc(initStripe:)
-    func initStripe(arguments: Array<Any>?) {
-        print("[DEBUG] initStripe method")
+    @objc(startVerification:)
+    func startVerification(arguments: Array<Any>?) {
+        print("[DEBUG] startVerification method")
         guard let arguments = arguments, let options = arguments[0] as? [String: Any] else { return }
         guard let callback: KrollCallback = options["onComplete"] as? KrollCallback else { return }
         
-        let url = options["url"] as? String ?? ""
+        let verificationSessionId = options["verificationSessionId"] as? String ?? ""
+        let ephemeralKeySecret = options["ephemeralKeySecret"] as? String ?? ""
         
-        // Make request to your verification endpoint
-        var urlRequest = URLRequest(url: URL(string: url)!)
-        urlRequest.httpMethod = "POST"
+        let configuration = IdentityVerificationSheet.Configuration(
+            brandLogo: UIImage(named: "logo")!
+        )
 
-        let task = URLSession.shared.dataTask(with: urlRequest) { [weak self] data, response, error in
-            DispatchQueue.main.async { [weak self] in
+        // Instantiate and present the sheet
+        let verificationSheet = IdentityVerificationSheet(
+            verificationSessionId: verificationSessionId,
+            ephemeralKeySecret: ephemeralKeySecret,
+            configuration: configuration
+        )
 
-            guard error == nil,
-                let data = data,
-                let responseJson = try? JSONDecoder().decode([String: String].self, from: data),
-                let verificationSessionId = responseJson["id"],
-                let ephemeralKeySecret = responseJson["ephemeral_key_secret"] else {
-                // Handle error
-                print(error as Any)
-                callback.call([["success": false, "type": "log", "message": error?.localizedDescription as Any] as [String : Any]], thisObject: self)
-                return
-             }
-                
-                callback.call([["success": true, "message": "Sdk initialized", "type": "log"] as [String : Any]], thisObject: self)
-            
-                
-                ///
-                let configuration = IdentityVerificationSheet.Configuration(
-                    brandLogo: UIImage(named: "logo")!
-                )
-                
-                // Instantiate and present the sheet
-                let verificationSheet = IdentityVerificationSheet(
-                    verificationSessionId: verificationSessionId,
-                    ephemeralKeySecret: ephemeralKeySecret,
-                    configuration: configuration
-                )
-                
-                verificationSheet.present(from: TiApp.controller().topPresentedController(), completion: { result in
-                    switch result {
-                    case .flowCompleted:
-                        // The user has completed uploading their documents.
-                        // Let them know that the verification is processing.
-                        print("Verification Flow Completed!")
-                        callback.call([["success": true, "type": "status", "status":"flowCompleted", "message": "Verification Flow Completed!"] as [String : Any]], thisObject: self)
-                    case .flowCanceled:
-                      // The user did not complete uploading their documents.
-                      // You should allow them to try again.
-                      print("Verification Flow Canceled!")
-                        callback.call([["success": true, "type": "status", "status":"flowCanceled", "message": "Verification Flow Canceled!"] as [String : Any]], thisObject: self)
-                    case .flowFailed(let error):
-                      // If the flow fails, you should display the localized error
-                      // message to your user using error.localizedDescription
-                      print("Verification Flow Failed!")
-                      print(error.localizedDescription)
-                        callback.call([["success": true, "type": "status", "status":"flowFailed", "message": error.localizedDescription] as [String : Any]], thisObject: self)
-                    }
-                })
-                ///
-                
-           }
-         }
-         task.resume()
+        verificationSheet.present(from: TiApp.controller().topPresentedController(), completion: { result in
+            switch result {
+            case .flowCompleted:
+                // The user has completed uploading their documents.
+                // Let them know that the verification is processing.
+                print("Verification Flow Completed!")
+                callback.call([["success": true, "type": "status", "status":"flowCompleted", "message": "Verification Flow Completed!"] as [String : Any]], thisObject: self)
+            case .flowCanceled:
+              // The user did not complete uploading their documents.
+              // You should allow them to try again.
+              print("Verification Flow Canceled!")
+                callback.call([["success": true, "type": "status", "status":"flowCanceled", "message": "Verification Flow Canceled!"] as [String : Any]], thisObject: self)
+            case .flowFailed(let error):
+              // If the flow fails, you should display the localized error
+              // message to your user using error.localizedDescription
+              print("Verification Flow Failed!")
+              print(error.localizedDescription)
+                callback.call([["success": true, "type": "status", "status":"flowFailed", "message": error.localizedDescription] as [String : Any]], thisObject: self)
+            }
+        })
+        
+        
+//        let url = options["url"] as? String ?? ""
+//
+//        // Make request to your verification endpoint
+//        var urlRequest = URLRequest(url: URL(string: url)!)
+//        urlRequest.httpMethod = "POST"
+//
+//        let task = URLSession.shared.dataTask(with: urlRequest) { [weak self] data, response, error in
+//            DispatchQueue.main.async { [weak self] in
+//
+//            guard error == nil,
+//                let data = data,
+//                let responseJson = try? JSONDecoder().decode([String: String].self, from: data),
+//                let verificationSessionId = responseJson["id"],
+//                let ephemeralKeySecret = responseJson["ephemeral_key_secret"] else {
+//                // Handle error
+//                print(error as Any)
+//                callback.call([["success": false, "type": "log", "message": error?.localizedDescription as Any] as [String : Any]], thisObject: self)
+//                return
+//             }
+//
+//                callback.call([["success": true, "message": "Sdk initialized", "type": "log"] as [String : Any]], thisObject: self)
+//
+//
+//                ///
+//                let configuration = IdentityVerificationSheet.Configuration(
+//                    brandLogo: UIImage(named: "logo")!
+//                )
+//
+//                // Instantiate and present the sheet
+//                let verificationSheet = IdentityVerificationSheet(
+//                    verificationSessionId: verificationSessionId,
+//                    ephemeralKeySecret: ephemeralKeySecret,
+//                    configuration: configuration
+//                )
+//
+//                verificationSheet.present(from: TiApp.controller().topPresentedController(), completion: { result in
+//                    switch result {
+//                    case .flowCompleted:
+//                        // The user has completed uploading their documents.
+//                        // Let them know that the verification is processing.
+//                        print("Verification Flow Completed!")
+//                        callback.call([["success": true, "type": "status", "status":"flowCompleted", "message": "Verification Flow Completed!"] as [String : Any]], thisObject: self)
+//                    case .flowCanceled:
+//                      // The user did not complete uploading their documents.
+//                      // You should allow them to try again.
+//                      print("Verification Flow Canceled!")
+//                        callback.call([["success": true, "type": "status", "status":"flowCanceled", "message": "Verification Flow Canceled!"] as [String : Any]], thisObject: self)
+//                    case .flowFailed(let error):
+//                      // If the flow fails, you should display the localized error
+//                      // message to your user using error.localizedDescription
+//                      print("Verification Flow Failed!")
+//                      print(error.localizedDescription)
+//                        callback.call([["success": true, "type": "status", "status":"flowFailed", "message": error.localizedDescription] as [String : Any]], thisObject: self)
+//                    }
+//                })
+//                ///
+//
+//           }
+//         }
+//         task.resume()
     }
     
 }

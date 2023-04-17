@@ -15,4 +15,4 @@ name: Stripe
 moduleid: com.inzori.stripe
 guid: 52d5c2bb-87aa-4fb8-b7e1-1508b149e4c4
 platform: android
-minsdk: 12.0.0.GA
+minsdk: 11.0.0.GA

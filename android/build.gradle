@@ -1,8 +1,24 @@
-
 repositories {
   google()
   mavenCentral()
+  maven { url 'https://jitpack.io' }
 }
+
+android {
+    compileSdkVersion 31
+
+    buildFeatures.dataBinding = true
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 31
+
+    }
+}
+
 dependencies {
-  implementation 'com.stripe:identity:20.22.0'
+// Stripe Identity Android SDK
+// this is the latest build before error:
+//[ERROR] [GRADLE] ERROR:/Users/fabi/.gradle/caches/transforms-3/b773123a4e20d066e6e3dfe644eeb56d/transformed/material-1.7.0/res/values/values.xml: Resource and asset merger: Can't determine type for tag '<macro name="m3_comp_bottom_app_bar_container_color">?attr/colorSurface</macro>'
+  implementation('com.stripe:identity:20.16.0');
 }
