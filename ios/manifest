@@ -1,0 +1,19 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: arm64 x86_64
+mac: false
+description: Stripe
+author: Fabian Martinez
+license: Specify your license
+copyright: Copyright (c) 2023 by Your Company
+
+# these should not be edited
+name: Stripe
+moduleid: com.inzori.stripe
+guid: 52d5c2bb-87aa-4fb8-b7e1-1508b149e4c4
+platform: iphone
+minsdk: 11.0.0.GA

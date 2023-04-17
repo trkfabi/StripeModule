@@ -1,0 +1,8 @@
+
+repositories {
+  google()
+  mavenCentral()
+}
+dependencies {
+  implementation 'com.stripe:identity:20.22.0'
+}
