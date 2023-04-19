@@ -8,16 +8,17 @@
  */
 package com.inzori.stripe;
 
-import android.app.Activity;
+
+import static androidx.core.app.ActivityCompat.startActivityForResult;
+
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.kroll.common.Log;
-import android.net.Uri;
 
-import androidx.activity.ComponentActivity;
+import android.content.Intent;
 
 import com.stripe.android.identity.*;
 
@@ -29,23 +30,22 @@ public class StripeModule extends KrollModule
 	private static final String LCAT = "StripeModule";
 	private String ephemeralKeySecret = "";
 	private String verificationSessionId = "";
-	private IdentityVerificationSheet identityVerificationSheet;
+	private static IdentityVerificationSheet identityVerificationSheet;
 
-	private static Activity activity;
+
 	// You can define constants with @Kroll.constant, for example:
 	// @Kroll.constant public static final String EXTERNAL_NAME = value;
-
 	public StripeModule()
 	{
 		super();
+
 	}
 
 	@Kroll.onAppCreate
 	public static void onAppCreate(TiApplication app)
 	{
-		Log.w(LCAT, "inside onAppCreate");
+		Log.w(LCAT, "inside onAppCreate 1");
 		// put module init code that needs to run when the application is created
-		activity = app.getCurrentActivity();
 	}
 
 	// Methods
@@ -53,57 +53,20 @@ public class StripeModule extends KrollModule
 	public void startVerification(KrollDict options)
 	{
 		Log.w(LCAT, "startVerification called");
+
 		verificationSessionId = options.containsKey("verificationSessionId") ? (String) options.get("verificationSessionId") : "";
 		ephemeralKeySecret = options.containsKey("ephemeralKeySecret") ? (String) options.get("ephemeralKeySecret") : "";
 		KrollFunction onComplete = (KrollFunction) options.get("onComplete");
 
-		identityVerificationSheet = IdentityVerificationSheet.Companion.create(
-				(ComponentActivity) TiApplication.getAppCurrentActivity(),
-			// pass your brand logo by creating it from local resource or
-			// Uri.parse("https://path/to/a/logo.jpg")
-			new IdentityVerificationSheet.Configuration(Uri.parse("https://files.stripe.com/files/MDB8YWNjdF8xMDQ5RVE0NmdmQ0VhM1F2fGZfbGl2ZV9MbnRzRjA2Nk1MVnh0TjB0dkhwYnFSY2M00BC2xHgEr")),
-			verificationFlowResult -> {
-				// handle verificationResult
-				KrollDict eventData = new KrollDict();
-				Log.d(LCAT, verificationFlowResult.toString());
-//				if (verificationFlowResult instanceof Completed) {
-//					// The user has completed uploading their documents.
-//					// Let them know that the verification is processing.
-//
-//					eventData.put("success",true);
-//					eventData.put("type","status");
-//					eventData.put("status","flowCompleted");
-//					eventData.put("message","Verification Flow Completed!");
-//					onComplete.callAsync(getKrollObject(), eventData);
-//					Log.d(LCAT, "Verification Flow Completed!");
-//				} else if (verificationFlowResult instanceof Canceled) {
-//					// The user did not complete uploading their documents.
-//					// You should allow them to try again.
-//					eventData.put("success",true);
-//					eventData.put("type","status");
-//					eventData.put("status","flowCanceled");
-//					eventData.put("message","Verification Flow Canceled!");
-//					onComplete.callAsync(getKrollObject(), eventData);
-//					Log.d(LCAT, "Verification Flow Canceled!");
-//				} else  if (verificationFlowResult instanceof Failed) {
-//					// If the flow fails, you should display the localized error
-//					// message to your user using throwable.getLocalizedMessage()
-//					eventData.put("success",false);
-//					eventData.put("type","status");
-//					eventData.put("status","flowFailed");
-//					eventData.put("message","Verification Flow Failed!");
-//					onComplete.callAsync(getKrollObject(), eventData);
-//					Log.d(LCAT, "Verification Flow Failed!");
-//				}
-			}
-		);
+		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), StripeActivity.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		intent.putExtra("verificationSessionId", verificationSessionId);
+		intent.putExtra("ephemeralKeySecret", ephemeralKeySecret);
 
-		identityVerificationSheet.present(
-				verificationSessionId,
-				ephemeralKeySecret
-		);
-}
+		TiApplication.getInstance().getApplicationContext().startActivity(intent);
+		//startActivityForResult(TiApplication.getAppCurrentActivity(), intent, 1, null);
 
+	}
 
 }
 

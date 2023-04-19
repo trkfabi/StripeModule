@@ -5,5 +5,16 @@
 		configuration in <iphone> and <android> sections
 	-->
 	<android xmlns:android="http://schemas.android.com/apk/res/android">
+		<manifest>
+
+			<uses-permission android:name="android.permission.INTERNET" />
+			<application>
+				<activity android:name="com.inzori.stripe.StripeActivity"
+					android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+					android:launchMode="singleTop" />
+			</application>					
+		</manifest>
+
 	</android>
+
 </ti:module>
