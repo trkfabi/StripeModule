@@ -8,19 +8,27 @@
  */
 package com.inzori.stripe;
 
-
-import static androidx.core.app.ActivityCompat.startActivityForResult;
-
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.kroll.common.Log;
+import org.appcelerator.titanium.TiC;
+import org.appcelerator.titanium.util.TiConvert;
+import org.appcelerator.titanium.util.TiUrl;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.stripe.android.identity.*;
+
+import java.io.IOException;
 
 @Kroll.module(name="Stripe", id="com.inzori.stripe")
 public class StripeModule extends KrollModule
@@ -31,14 +39,14 @@ public class StripeModule extends KrollModule
 	private String ephemeralKeySecret = "";
 	private String verificationSessionId = "";
 	private static IdentityVerificationSheet identityVerificationSheet;
-
+	StripeModule self;
 
 	// You can define constants with @Kroll.constant, for example:
 	// @Kroll.constant public static final String EXTERNAL_NAME = value;
 	public StripeModule()
 	{
 		super();
-
+		self = this;
 	}
 
 	@Kroll.onAppCreate
@@ -48,25 +56,81 @@ public class StripeModule extends KrollModule
 		// put module init code that needs to run when the application is created
 	}
 
+	@Kroll.method
+	public void load(String path) {
+		String url = TiUrl.resolve(TiC.URL_ANDROID_ASSET_RESOURCES, path, null);
+		try {
+			Context context = TiApplication.getInstance();
+			AssetFileDescriptor afd = null;
+			String p = url.substring(TiConvert.ASSET_URL.length());
+			Log.w(LCAT, "load() p:  " + p);
+			afd = context.getAssets().openFd(p);
+			Log.w(LCAT, "load() afd getFileDescriptor():  " + afd.getFileDescriptor());
+		} catch (Exception e) {}
+	}
+
+	public static String getAssetUri(String assetFileName) throws IOException {
+		Log.w(LCAT, "getAssetUri 1");
+		AssetManager assetManager = TiApplication.getAppCurrentActivity().getApplicationContext().getAssets();
+		Log.w(LCAT, "getAssetUri 2");
+		AssetFileDescriptor assetFileDescriptor = assetManager.openFd(assetFileName);
+		Log.w(LCAT, "getAssetUri 3");
+		String result =  "content://com.inzori.stripe.asset/" + assetFileDescriptor.getFileDescriptor();
+		Log.w(LCAT, "getAssetUri 4");
+		return result;
+	}
+
 	// Methods
 	@Kroll.method
 	public void startVerification(KrollDict options)
 	{
-		Log.w(LCAT, "startVerification called");
+		// listen to broadcast event from StripeActivity
+		LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).registerReceiver(myReceiver, new IntentFilter("stripe:verification_result"));
 
 		verificationSessionId = options.containsKey("verificationSessionId") ? (String) options.get("verificationSessionId") : "";
 		ephemeralKeySecret = options.containsKey("ephemeralKeySecret") ? (String) options.get("ephemeralKeySecret") : "";
+		String logoUrl = options.containsKey("logoUrl") ? (String) options.get("logoUrl") : "";
+		String logoUrlAsset = logoUrl;
+
+		load(logoUrl);
+
+		try {
+			logoUrlAsset = getAssetUri(logoUrl);
+		} catch (IOException e) {
+			Log.e(LCAT, "Exception: " + e.getLocalizedMessage());
+		}
 		KrollFunction onComplete = (KrollFunction) options.get("onComplete");
 
 		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), StripeActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 		intent.putExtra("verificationSessionId", verificationSessionId);
 		intent.putExtra("ephemeralKeySecret", ephemeralKeySecret);
+		intent.putExtra("logoUrl", logoUrlAsset);
 
 		TiApplication.getInstance().getApplicationContext().startActivity(intent);
-		//startActivityForResult(TiApplication.getAppCurrentActivity(), intent, 1, null);
-
 	}
 
+	BroadcastReceiver myReceiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// Handle the event here
+			Boolean success = intent.getBooleanExtra("success", true);
+			String type = intent.getStringExtra("type");
+			String status = intent.getStringExtra("status");
+			String message = intent.getStringExtra("message");
+			Log.w(LCAT, "Received event with success: " + success);
+
+			// fire event back to Ti app
+			KrollDict props = new KrollDict();
+			props.put("success", success);
+			props.put("type", type);
+			props.put("status", status);
+			props.put("message", message);
+			self.fireEvent("stripe:verification_result", props);
+
+			LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).unregisterReceiver(myReceiver);
+		}
+	};
 }
 
