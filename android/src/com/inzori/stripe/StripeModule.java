@@ -24,11 +24,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.net.Uri;
+
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.stripe.android.identity.*;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 @Kroll.module(name="Stripe", id="com.inzori.stripe")
 public class StripeModule extends KrollModule
@@ -57,27 +61,22 @@ public class StripeModule extends KrollModule
 	}
 
 	@Kroll.method
-	public void load(String path) {
-		String url = TiUrl.resolve(TiC.URL_ANDROID_ASSET_RESOURCES, path, null);
-		try {
-			Context context = TiApplication.getInstance();
-			AssetFileDescriptor afd = null;
-			String p = url.substring(TiConvert.ASSET_URL.length());
-			Log.w(LCAT, "load() p:  " + p);
-			afd = context.getAssets().openFd(p);
-			Log.w(LCAT, "load() afd getFileDescriptor():  " + afd.getFileDescriptor());
-		} catch (Exception e) {}
-	}
+	public void load2(String path) {
+		// get a reference to the AssetManager object for the module
+		AssetManager assetManager = TiApplication.getAppCurrentActivity().getAssets();
 
-	public static String getAssetUri(String assetFileName) throws IOException {
-		Log.w(LCAT, "getAssetUri 1");
-		AssetManager assetManager = TiApplication.getAppCurrentActivity().getApplicationContext().getAssets();
-		Log.w(LCAT, "getAssetUri 2");
-		AssetFileDescriptor assetFileDescriptor = assetManager.openFd(assetFileName);
-		Log.w(LCAT, "getAssetUri 3");
-		String result =  "content://com.inzori.stripe.asset/" + assetFileDescriptor.getFileDescriptor();
-		Log.w(LCAT, "getAssetUri 4");
-		return result;
+		try {
+			// get a list of all files in the assets directory
+			String[] files = assetManager.list("Resources");
+
+			// loop through the files and print their names
+			for (String filename : files) {
+				Log.w(LCAT, "load2() File name: " + filename);
+			}
+		} catch (IOException e) {
+			// handle exception
+			Log.w(LCAT, "load2() exc: " + e.getLocalizedMessage());
+		}
 	}
 
 	// Methods
@@ -92,13 +91,6 @@ public class StripeModule extends KrollModule
 		String logoUrl = options.containsKey("logoUrl") ? (String) options.get("logoUrl") : "";
 		String logoUrlAsset = logoUrl;
 
-		load(logoUrl);
-
-		try {
-			logoUrlAsset = getAssetUri(logoUrl);
-		} catch (IOException e) {
-			Log.e(LCAT, "Exception: " + e.getLocalizedMessage());
-		}
 		KrollFunction onComplete = (KrollFunction) options.get("onComplete");
 
 		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), StripeActivity.class);
