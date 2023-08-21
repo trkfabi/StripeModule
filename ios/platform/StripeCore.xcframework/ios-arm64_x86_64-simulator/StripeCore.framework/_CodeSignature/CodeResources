@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/StripeCore-Swift.h</key>
 		<data>
-		g3fbb+HcERyjFwEZ3MVCQxOu6Cg=
+		aRRDtNiOc1sQHwDPNQHtrpPfe0s=
 		</data>
 		<key>Headers/StripeCore.h</key>
 		<data>
@@ -14,59 +14,51 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		OnottgTaAoO8ivupH5m3Ds+SNCo=
+		LLTP3lEpN/KJ+ekaVNzBqL8ywzw=
+		</data>
+		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		VHZeInphVe9plqUN79cnWBnXdYU=
+		</data>
+		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		xFmGX+RfmQb5T4bxKGLaAmDJE7I=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		fYbETMc5S9OiD13llsPB45+Y7nw=
+		3dgy1NIfisCdDvetrFw9LHHPrGQ=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		gEiagdVIEIfL4NSqYigWsdP+NAM=
+		tWVoHRfKaSmkn9gGj2nZAOAkoJU=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		vFglZRUs/sjVgfGet8b4AD6wvO8=
+		Juaa6LysRkA6gHg1sZBY2sZyGIg=
 		</data>
-		<key>Modules/StripeCore.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		fYbETMc5S9OiD13llsPB45+Y7nw=
+		VHZeInphVe9plqUN79cnWBnXdYU=
 		</data>
-		<key>Modules/StripeCore.swiftmodule/arm64.swiftinterface</key>
+		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		gEiagdVIEIfL4NSqYigWsdP+NAM=
-		</data>
-		<key>Modules/StripeCore.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		vFglZRUs/sjVgfGet8b4AD6wvO8=
+		FKFLcY1TayO3PTeyLyWBjcmkE54=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		KPLVK/QKI3eFVKmxZKosP4Ik5a8=
+		E/dFpn33O0Q9ekMrP+qylZlA50I=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TNNQ51WuYVrm2ObLAbmwrWhUptw=
+		o2Zj7s0XuEo2RTqR1q1c2xtuueA=
 		</data>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		CdAmn7RCusHT3Ql/TB91Zxn8GZY=
-		</data>
-		<key>Modules/StripeCore.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		KPLVK/QKI3eFVKmxZKosP4Ik5a8=
-		</data>
-		<key>Modules/StripeCore.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		TNNQ51WuYVrm2ObLAbmwrWhUptw=
-		</data>
-		<key>Modules/StripeCore.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		CdAmn7RCusHT3Ql/TB91Zxn8GZY=
+		GPvk0UmP89tj2H9Ao7rMTL4+FCI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		w7mbDxr3qfQx+hcVC8hWslQE5Po=
+		6YyZ2KRSF27FeEfwSw53+D4dUdo=
 		</data>
 		<key>bg-BG.lproj/Localizable.strings</key>
 		<dict>
@@ -444,7 +436,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AM9MzOj1E5zcT1qEKNSD1VlbucMSx9A8HxYJNJtdvNs=
+			EqXdE/OxZr8HSqydc2QsrkoYpUmUdXwTWwEjJvSKTrI=
 			</data>
 		</dict>
 		<key>Headers/StripeCore.h</key>
@@ -454,95 +446,81 @@
 			RweM9y+wkqWZptH8h83sQ8yurZ7t4BXrr8UpqUQczFA=
 			</data>
 		</dict>
+		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ow/XqfHVmCB/RlIaB4+WjKxS6JDxWcdmVDqiqKYWVVg=
+			</data>
+		</dict>
+		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			K/EZ1m7wgm3NNJ41Zt2sT5lkrv7axAHisveVks61kLc=
+			</data>
+		</dict>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jaDN7Iqa708ByXloInrGM+zZRji7RNwkYBI4C0b+HTA=
+			xLYcBnCr1HlX1BLjaCICAt8L03HqdTMvvfyQy9HLbdU=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hGyEpRjLBLflet1Sm09gM+Y+4T6zSXci8RBZjd0890E=
+			FHKu/3/r7nIOdX7pO9U1jcOn72xweqI9hq2vgDB/6QE=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p1nGQJolKm6Sv3da8MqLA2+ZZOQVjqgCd+FS9nUCu3o=
+			yCNeMYhZ5EnxQbYdffk9XtWCWWJOm6LDDtN63rA6yag=
 			</data>
 		</dict>
-		<key>Modules/StripeCore.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jaDN7Iqa708ByXloInrGM+zZRji7RNwkYBI4C0b+HTA=
+			ow/XqfHVmCB/RlIaB4+WjKxS6JDxWcdmVDqiqKYWVVg=
 			</data>
 		</dict>
-		<key>Modules/StripeCore.swiftmodule/arm64.swiftinterface</key>
+		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hGyEpRjLBLflet1Sm09gM+Y+4T6zSXci8RBZjd0890E=
-			</data>
-		</dict>
-		<key>Modules/StripeCore.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			p1nGQJolKm6Sv3da8MqLA2+ZZOQVjqgCd+FS9nUCu3o=
+			jszSdnTj/TOByIZW2o1NKK8WpHSbCzmCV57WygE/hpI=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8C5zPWbsUHVLuBg3cSp+9oHpk40sxY2RwBiE1YOhx4Y=
+			8J6hty5gd4qSwvrMzc0RQ+3bo4zTOvntDRaNFiXS/WM=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t0Py4+uAip+Mt1M3Qd9NM5TkDuwP5FBwCPNYQRAPvU4=
+			7nH1F3jlozwC9wAWcZLo6Ryor7uNk+Z5RwQaI6Rqqqo=
 			</data>
 		</dict>
 		<key>Modules/StripeCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ftEotJE18s0YtbUrECSGku1AFO6I3B742TK8pUvafIw=
-			</data>
-		</dict>
-		<key>Modules/StripeCore.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			8C5zPWbsUHVLuBg3cSp+9oHpk40sxY2RwBiE1YOhx4Y=
-			</data>
-		</dict>
-		<key>Modules/StripeCore.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			t0Py4+uAip+Mt1M3Qd9NM5TkDuwP5FBwCPNYQRAPvU4=
-			</data>
-		</dict>
-		<key>Modules/StripeCore.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ftEotJE18s0YtbUrECSGku1AFO6I3B742TK8pUvafIw=
+			lliK1esmYCEkwhbzjgCGJKis96ajJx6N7G5St5fvaNA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			k+FItkeqcv8gh5BxVT5VYer4gTYPjQ1IABZl6JjOu8w=
+			ivVmgoIDlZN0mLtZz7lXEnGA3+/0D69+RnCtO6pkMa8=
 			</data>
 		</dict>
 		<key>bg-BG.lproj/Localizable.strings</key>

@@ -60,25 +60,6 @@ public class StripeModule extends KrollModule
 		// put module init code that needs to run when the application is created
 	}
 
-	@Kroll.method
-	public void load2(String path) {
-		// get a reference to the AssetManager object for the module
-		AssetManager assetManager = TiApplication.getAppCurrentActivity().getAssets();
-
-		try {
-			// get a list of all files in the assets directory
-			String[] files = assetManager.list("Resources");
-
-			// loop through the files and print their names
-			for (String filename : files) {
-				Log.w(LCAT, "load2() File name: " + filename);
-			}
-		} catch (IOException e) {
-			// handle exception
-			Log.w(LCAT, "load2() exc: " + e.getLocalizedMessage());
-		}
-	}
-
 	// Methods
 	@Kroll.method
 	public void startVerification(KrollDict options)
@@ -91,7 +72,7 @@ public class StripeModule extends KrollModule
 		String logoUrl = options.containsKey("logoUrl") ? (String) options.get("logoUrl") : "";
 		String logoUrlAsset = logoUrl;
 
-		KrollFunction onComplete = (KrollFunction) options.get("onComplete");
+		//KrollFunction onComplete = (KrollFunction) options.get("onComplete");
 
 		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), StripeActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -124,5 +105,69 @@ public class StripeModule extends KrollModule
 			LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).unregisterReceiver(myReceiver);
 		}
 	};
+
+	// Methods
+	@Kroll.method
+	public void startPayments(KrollDict options)
+	{
+		// listen to broadcast event from StripeGooglePayActivity
+		LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).registerReceiver(myReceiverGooglePay, new IntentFilter("stripe:onGooglePay"));
+
+		Log.w(LCAT, "startPayments " );
+		Integer amount = options.containsKey("amount") ? (Integer) options.get("amount") : 0;
+		String currency = options.containsKey("currency") ? (String) options.get("currency") : "usd";
+		String country = options.containsKey("country") ? (String) options.get("country") : "US";
+		String companyName = options.containsKey("companyName") ? (String) options.get("companyName") : "Fluid Market";
+		String pk = options.containsKey("pk") ? (String) options.get("pk") : "";
+		String clientSecret = options.containsKey("clientSecret") ? (String) options.get("clientSecret") : "";
+		Boolean isSandbox = options.containsKey("isSandbox") ? (Boolean) options.get("isSandbox") : true;
+
+		//KrollFunction onComplete = (KrollFunction) options.get("onComplete");
+
+		Log.w(LCAT, "amount " + amount );
+		Log.w(LCAT, "currency " + currency );
+
+		Log.w(LCAT, "country " + country );
+		Log.w(LCAT, "companyName " + companyName );
+		Log.w(LCAT, "pk " + pk );
+		Log.w(LCAT, "clientSecret " + clientSecret );
+		Log.w(LCAT, "isSandbox " + isSandbox );
+
+		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), StripeGooglePayActivity.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		intent.putExtra("amount", amount);
+		intent.putExtra("currency", currency);
+		intent.putExtra("country", country);
+		intent.putExtra("companyName", companyName);
+		intent.putExtra("pk", pk);
+		intent.putExtra("clientSecret", clientSecret);
+		intent.putExtra("isSandbox", isSandbox);
+
+		TiApplication.getInstance().getApplicationContext().startActivity(intent);
+	}	
+
+
+	BroadcastReceiver myReceiverGooglePay = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// Handle the event here
+			Boolean success = intent.getBooleanExtra("success", false);
+			String event = intent.getStringExtra("event");
+			Boolean cancelled = intent.getBooleanExtra("cancelled", false);
+			String message = intent.getStringExtra("message");
+			Log.w(LCAT, "Received event with success: " + success);
+
+			// fire event back to Ti app
+			KrollDict props = new KrollDict();
+			props.put("success", success);
+			props.put("cancelled", cancelled);
+			props.put("event", event);
+			props.put("message", message);
+			self.fireEvent("fluid:payment_status", props);
+
+			LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).unregisterReceiver(myReceiverGooglePay);
+		}
+	};	
 }
 

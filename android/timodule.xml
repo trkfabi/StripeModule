@@ -12,6 +12,12 @@
 				<activity android:name="com.inzori.stripe.StripeActivity"
 					android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
 					android:launchMode="singleTop" />
+				<activity android:name="com.inzori.stripe.StripeGooglePayActivity"
+					android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+					android:launchMode="singleTop" />					
+				<meta-data
+    				android:name="com.google.android.gms.wallet.api.enabled"
+    				android:value="true" />
 			</application>					
 		</manifest>
 
