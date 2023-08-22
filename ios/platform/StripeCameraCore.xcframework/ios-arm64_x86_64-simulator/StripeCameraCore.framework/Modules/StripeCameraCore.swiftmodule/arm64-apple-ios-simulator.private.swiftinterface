@@ -49,8 +49,7 @@ public protocol AppSettingsHelperProtocol {
   var canOpenAppSettings: Swift.Bool { get }
   func openAppSettings()
 }
-@_spi(STP) @_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
-public class AppSettingsHelper : StripeCameraCore.AppSettingsHelperProtocol {
+@_spi(STP) @_hasMissingDesignatedInitializers public class AppSettingsHelper : StripeCameraCore.AppSettingsHelperProtocol {
   @_spi(STP) public static let shared: StripeCameraCore.AppSettingsHelper
   @_spi(STP) public var canOpenAppSettings: Swift.Bool {
     @_spi(STP) get

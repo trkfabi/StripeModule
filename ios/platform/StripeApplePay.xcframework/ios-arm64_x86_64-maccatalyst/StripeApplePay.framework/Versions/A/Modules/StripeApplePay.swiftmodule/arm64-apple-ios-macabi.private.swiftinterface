@@ -40,10 +40,8 @@ public protocol ApplePayContextDelegate : StripeApplePay._stpinternal_STPApplePa
   func applePayContext(_ context: StripeApplePay.STPApplePayContext, didCompleteWith status: StripeApplePay.STPApplePayContext.PaymentStatus, error: Swift.Error?)
 }
 @objc(STPApplePayContext) public class STPApplePayContext : ObjectiveC.NSObject, PassKit.PKPaymentAuthorizationControllerDelegate {
-  @_spi(STP) public static let FORCE_SUCCESS: Swift.String
+  @_spi(STP) public static let COMPLETE_WITHOUT_CONFIRMING_INTENT: Swift.String
   @objc(initWithPaymentRequest:delegate:) required public init?(paymentRequest: PassKit.PKPaymentRequest, delegate: StripeApplePay._stpinternal_STPApplePayContextDelegateBase?)
-  @available(iOSApplicationExtension, unavailable, message: "Use `presentApplePay(from:completion:)` in App Extensions.")
-  @available(macCatalystApplicationExtension, unavailable, message: "Use `presentApplePay(from:completion:)` in App Extensions.")
   @objc(presentApplePayWithCompletion:) public func presentApplePay(completion: StripeApplePay.STPVoidBlock? = nil)
   @objc(presentApplePayFromWindow:completion:) public func presentApplePay(from window: UIKit.UIWindow?, completion: StripeApplePay.STPVoidBlock? = nil)
   @available(*, deprecated, renamed: "presentApplePay(completion:)", message: "Use `presentApplePay(completion:)` instead.")
@@ -51,12 +49,24 @@ public protocol ApplePayContextDelegate : StripeApplePay._stpinternal_STPApplePa
   @objc public var apiClient: StripeCore.STPAPIClient
   @_spi(STP) public var shippingDetails: StripeCore.StripeAPI.ShippingDetails?
   @_spi(STP) public var returnUrl: Swift.String?
+  @_spi(STP) @frozen public enum ConfirmType {
+    @_spi(STP) case client
+    @_spi(STP) case server
+    @_spi(STP) case none
+    @_spi(STP) public static func == (a: StripeApplePay.STPApplePayContext.ConfirmType, b: StripeApplePay.STPApplePayContext.ConfirmType) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+  @_spi(STP) public var confirmType: StripeApplePay.STPApplePayContext.ConfirmType?
   @objc override dynamic public func responds(to aSelector: ObjectiveC.Selector!) -> Swift.Bool
   @objc(paymentAuthorizationController:didAuthorizePayment:handler:) public func paymentAuthorizationController(_ controller: PassKit.PKPaymentAuthorizationController, didAuthorizePayment payment: PassKit.PKPayment, handler completion: @escaping (PassKit.PKPaymentAuthorizationResult) -> Swift.Void)
   @objc public func paymentAuthorizationController(_ controller: PassKit.PKPaymentAuthorizationController, didSelectShippingMethod shippingMethod: PassKit.PKShippingMethod, handler completion: @escaping (PassKit.PKPaymentRequestShippingMethodUpdate) -> Swift.Void)
   @objc public func paymentAuthorizationController(_ controller: PassKit.PKPaymentAuthorizationController, didSelectShippingContact contact: PassKit.PKContact, handler completion: @escaping (PassKit.PKPaymentRequestShippingContactUpdate) -> Swift.Void)
   @objc public func paymentAuthorizationControllerDidFinish(_ controller: PassKit.PKPaymentAuthorizationController)
   @objc public func presentationWindow(for controller: PassKit.PKPaymentAuthorizationController) -> UIKit.UIWindow?
+  @_spi(STP) public static func makeUnknownError(message: Swift.String) -> Foundation.NSError
   @frozen public enum PaymentStatus {
     case success
     case error
@@ -455,6 +465,13 @@ extension StripeCore.StripeAPI {
     @_spi(STP) public init(from decoder: Swift.Decoder) throws
   }
 }
+extension StripeCore.StripeAPI {
+  @_spi(StripeApplePayTokenization) public struct Token : StripeCore.UnknownFieldsDecodable {
+    @_spi(StripeApplePayTokenization) public var _allResponseFieldsStorage: StripeCore.NonEncodableParameters?
+    @_spi(StripeApplePayTokenization) public let id: Swift.String
+    @_spi(StripeApplePayTokenization) public init(from decoder: Swift.Decoder) throws
+  }
+}
 @_spi(STP) extension StripeCore.StripeAPI.PaymentIntent {
   @_spi(STP) public typealias PaymentIntentCompletionBlock = (Swift.Result<StripeCore.StripeAPI.PaymentIntent, Swift.Error>) -> Swift.Void
   @_spi(STP) public static func get(apiClient: StripeCore.STPAPIClient = .shared, clientSecret: Swift.String, completion: @escaping StripeCore.StripeAPI.PaymentIntent.PaymentIntentCompletionBlock)
@@ -469,6 +486,10 @@ extension StripeCore.StripeAPI.PaymentMethod {
   @_spi(STP) public static func get(apiClient: StripeCore.STPAPIClient = .shared, clientSecret: Swift.String, completion: @escaping StripeCore.StripeAPI.SetupIntent.SetupIntentCompletionBlock)
   @_spi(STP) public static func confirm(apiClient: StripeCore.STPAPIClient = .shared, params: StripeCore.StripeAPI.SetupIntentConfirmParams, completion: @escaping StripeCore.StripeAPI.SetupIntent.SetupIntentCompletionBlock)
 }
+@_spi(StripeApplePayTokenization) extension StripeCore.StripeAPI.Token {
+  @_spi(StripeApplePayTokenization) public typealias TokenCompletionBlock = (Swift.Result<StripeCore.StripeAPI.Token, Swift.Error>) -> Swift.Void
+  @_spi(StripeApplePayTokenization) public static func create(apiClient: StripeCore.STPAPIClient = .shared, payment: PassKit.PKPayment, completion: @escaping StripeCore.StripeAPI.Token.TokenCompletionBlock)
+}
 @_spi(STP) public protocol PaymentAnalytic : StripeCore.Analytic {
   @_spi(STP) var productUsage: Swift.Set<Swift.String> { get }
   @_spi(STP) var additionalParams: [Swift.String : Any] { get }
@@ -481,6 +502,9 @@ extension StripeCore.StripeAPI.PaymentMethod {
 extension StripeCore.STPAPIClient {
   @_spi(STP) public class func paramsAddingPaymentUserAgent(_ params: [Swift.String : Any]) -> [Swift.String : Any]
 }
+extension StripeApplePay.STPApplePayContext.ConfirmType : Swift.Equatable {}
+extension StripeApplePay.STPApplePayContext.ConfirmType : Swift.Hashable {}
+extension StripeApplePay.STPApplePayContext.ConfirmType : Swift.Sendable {}
 extension StripeApplePay.STPApplePayContext.PaymentStatus : Swift.Equatable {}
 extension StripeApplePay.STPApplePayContext.PaymentStatus : Swift.Hashable {}
 extension StripeApplePay.STPApplePayContext.PaymentStatus : Swift.Sendable {}

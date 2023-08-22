@@ -5559,6 +5559,123 @@
           },
           {
             "kind": "Var",
+            "name": "isEnabled",
+            "printedName": "isEnabled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@StripeUICore@objc(cs)STP_Internal_OneTimeCodeTextField(py)enabled",
+            "mangledName": "$s12StripeUICore20OneTimeCodeTextFieldC9isEnabledSbvp",
+            "moduleName": "StripeUICore",
+            "overriding": true,
+            "objc_name": "enabled",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "STP"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@StripeUICore@objc(cs)STP_Internal_OneTimeCodeTextField(im)isEnabled",
+                "mangledName": "$s12StripeUICore20OneTimeCodeTextFieldC9isEnabledSbvg",
+                "moduleName": "StripeUICore",
+                "overriding": true,
+                "implicit": true,
+                "objc_name": "isEnabled",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "spi_group_names": [
+                  "STP"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@StripeUICore@objc(cs)STP_Internal_OneTimeCodeTextField(im)setEnabled:",
+                "mangledName": "$s12StripeUICore20OneTimeCodeTextFieldC9isEnabledSbvs",
+                "moduleName": "StripeUICore",
+                "overriding": true,
+                "implicit": true,
+                "objc_name": "setEnabled:",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "spi_group_names": [
+                  "STP"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12StripeUICore20OneTimeCodeTextFieldC9isEnabledSbvM",
+                "mangledName": "$s12StripeUICore20OneTimeCodeTextFieldC9isEnabledSbvM",
+                "moduleName": "StripeUICore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "STP"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "keyboardType",
             "printedName": "keyboardType",
             "children": [
@@ -11060,6 +11177,77 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "label",
+            "printedName": "label",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12StripeUICore20DropdownFieldElementC5labelSSSgvp",
+            "mangledName": "$s12StripeUICore20DropdownFieldElementC5labelSSSgvp",
+            "moduleName": "StripeUICore",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "STP"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12StripeUICore20DropdownFieldElementC5labelSSSgvg",
+                "mangledName": "$s12StripeUICore20DropdownFieldElementC5labelSSSgvg",
+                "moduleName": "StripeUICore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "STP"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(items:defaultIndex:label:theme:disableDropdownWithSingleElement:didUpdate:)",
@@ -13222,6 +13410,59 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "disabledBackgroundColor",
+            "printedName": "disabledBackgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12StripeUICore10ElementsUIO23disabledBackgroundColorSo7UIColorCvpZ",
+            "mangledName": "$s12StripeUICore10ElementsUIO23disabledBackgroundColorSo7UIColorCvpZ",
+            "moduleName": "StripeUICore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "STP"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12StripeUICore10ElementsUIO23disabledBackgroundColorSo7UIColorCvgZ",
+                "mangledName": "$s12StripeUICore10ElementsUIO23disabledBackgroundColorSo7UIColorCvgZ",
+                "moduleName": "StripeUICore",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "STP"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "makeErrorLabel",
             "printedName": "makeErrorLabel(theme:)",
@@ -14940,6 +15181,104 @@
                     "declKind": "Accessor",
                     "usr": "s:12StripeUICore15ElementsUIThemeV5ColorV10backgroundSo7UIColorCvM",
                     "mangledName": "$s12StripeUICore15ElementsUIThemeV5ColorV10backgroundSo7UIColorCvM",
+                    "moduleName": "StripeUICore",
+                    "implicit": true,
+                    "spi_group_names": [
+                      "STP"
+                    ],
+                    "accessorKind": "_modify"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "disabledBackground",
+                "printedName": "disabledBackground",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:12StripeUICore15ElementsUIThemeV5ColorV18disabledBackgroundSo7UIColorCvp",
+                "mangledName": "$s12StripeUICore15ElementsUIThemeV5ColorV18disabledBackgroundSo7UIColorCvp",
+                "moduleName": "StripeUICore",
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "spi_group_names": [
+                  "STP"
+                ],
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:12StripeUICore15ElementsUIThemeV5ColorV18disabledBackgroundSo7UIColorCvg",
+                    "mangledName": "$s12StripeUICore15ElementsUIThemeV5ColorV18disabledBackgroundSo7UIColorCvg",
+                    "moduleName": "StripeUICore",
+                    "implicit": true,
+                    "spi_group_names": [
+                      "STP"
+                    ],
+                    "accessorKind": "get"
+                  },
+                  {
+                    "kind": "Accessor",
+                    "name": "Set",
+                    "printedName": "Set()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:12StripeUICore15ElementsUIThemeV5ColorV18disabledBackgroundSo7UIColorCvs",
+                    "mangledName": "$s12StripeUICore15ElementsUIThemeV5ColorV18disabledBackgroundSo7UIColorCvs",
+                    "moduleName": "StripeUICore",
+                    "implicit": true,
+                    "spi_group_names": [
+                      "STP"
+                    ],
+                    "accessorKind": "set"
+                  },
+                  {
+                    "kind": "Accessor",
+                    "name": "Modify",
+                    "printedName": "Modify()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:12StripeUICore15ElementsUIThemeV5ColorV18disabledBackgroundSo7UIColorCvM",
+                    "mangledName": "$s12StripeUICore15ElementsUIThemeV5ColorV18disabledBackgroundSo7UIColorCvM",
                     "moduleName": "StripeUICore",
                     "implicit": true,
                     "spi_group_names": [
@@ -19408,137 +19747,6 @@
           },
           {
             "kind": "Var",
-            "name": "didTapAutocompleteButton",
-            "printedName": "didTapAutocompleteButton",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "() -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ]
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:12StripeUICore21AddressSectionElementC24didTapAutocompleteButtonyycvp",
-            "mangledName": "$s12StripeUICore21AddressSectionElementC24didTapAutocompleteButtonyycvp",
-            "moduleName": "StripeUICore",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "spi_group_names": [
-              "STP"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "() -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12StripeUICore21AddressSectionElementC24didTapAutocompleteButtonyycvg",
-                "mangledName": "$s12StripeUICore21AddressSectionElementC24didTapAutocompleteButtonyycvg",
-                "moduleName": "StripeUICore",
-                "implicit": true,
-                "spi_group_names": [
-                  "STP"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "() -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12StripeUICore21AddressSectionElementC24didTapAutocompleteButtonyycvs",
-                "mangledName": "$s12StripeUICore21AddressSectionElementC24didTapAutocompleteButtonyycvs",
-                "moduleName": "StripeUICore",
-                "implicit": true,
-                "spi_group_names": [
-                  "STP"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12StripeUICore21AddressSectionElementC24didTapAutocompleteButtonyycvM",
-                "mangledName": "$s12StripeUICore21AddressSectionElementC24didTapAutocompleteButtonyycvM",
-                "moduleName": "StripeUICore",
-                "implicit": true,
-                "spi_group_names": [
-                  "STP"
-                ],
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "didUpdate",
             "printedName": "didUpdate",
             "children": [
@@ -19698,7 +19906,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(title:countries:locale:addressSpecProvider:defaults:collectionMode:additionalFields:theme:)",
+            "printedName": "init(title:countries:locale:addressSpecProvider:defaults:collectionMode:additionalFields:theme:presentAutoComplete:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -19785,11 +19993,29 @@
                 "printedName": "StripeUICore.ElementsUITheme",
                 "hasDefaultArg": true,
                 "usr": "s:12StripeUICore15ElementsUIThemeV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "hasDefaultArg": true
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:12StripeUICore21AddressSectionElementC5title9countries6locale19addressSpecProvider8defaults14collectionMode16additionalFields5themeACSSSg_SaySSGSg10Foundation6LocaleVAA0cjK0CAC0C7DetailsVAC010CollectionN0OAC010AdditionalP0VAA15ElementsUIThemeVtcfc",
-            "mangledName": "$s12StripeUICore21AddressSectionElementC5title9countries6locale19addressSpecProvider8defaults14collectionMode16additionalFields5themeACSSSg_SaySSGSg10Foundation6LocaleVAA0cjK0CAC0C7DetailsVAC010CollectionN0OAC010AdditionalP0VAA15ElementsUIThemeVtcfc",
+            "usr": "s:12StripeUICore21AddressSectionElementC5title9countries6locale19addressSpecProvider8defaults14collectionMode16additionalFields5theme19presentAutoCompleteACSSSg_SaySSGSg10Foundation6LocaleVAA0cjK0CAC0C7DetailsVAC010CollectionN0OAC010AdditionalP0VAA15ElementsUIThemeVyyctcfc",
+            "mangledName": "$s12StripeUICore21AddressSectionElementC5title9countries6locale19addressSpecProvider8defaults14collectionMode16additionalFields5theme19presentAutoCompleteACSSSg_SaySSGSg10Foundation6LocaleVAA0cjK0CAC0C7DetailsVAC010CollectionN0OAC010AdditionalP0VAA15ElementsUIThemeVyyctcfc",
             "moduleName": "StripeUICore",
             "declAttributes": [
               "AccessControl",
@@ -20104,138 +20330,6 @@
               },
               {
                 "kind": "Var",
-                "name": "didTap",
-                "printedName": "didTap",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "() -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "Var",
-                "usr": "s:12StripeUICore21AddressSectionElementC05DummyC4LineC6didTapyycvp",
-                "mangledName": "$s12StripeUICore21AddressSectionElementC05DummyC4LineC6didTapyycvp",
-                "moduleName": "StripeUICore",
-                "declAttributes": [
-                  "Custom",
-                  "HasInitialValue",
-                  "HasStorage",
-                  "AccessControl"
-                ],
-                "spi_group_names": [
-                  "STP"
-                ],
-                "hasStorage": true,
-                "accessors": [
-                  {
-                    "kind": "Accessor",
-                    "name": "Get",
-                    "printedName": "Get()",
-                    "children": [
-                      {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "() -> ()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          }
-                        ]
-                      }
-                    ],
-                    "declKind": "Accessor",
-                    "usr": "s:12StripeUICore21AddressSectionElementC05DummyC4LineC6didTapyycvg",
-                    "mangledName": "$s12StripeUICore21AddressSectionElementC05DummyC4LineC6didTapyycvg",
-                    "moduleName": "StripeUICore",
-                    "implicit": true,
-                    "spi_group_names": [
-                      "STP"
-                    ],
-                    "accessorKind": "get"
-                  },
-                  {
-                    "kind": "Accessor",
-                    "name": "Set",
-                    "printedName": "Set()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "() -> ()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          }
-                        ]
-                      }
-                    ],
-                    "declKind": "Accessor",
-                    "usr": "s:12StripeUICore21AddressSectionElementC05DummyC4LineC6didTapyycvs",
-                    "mangledName": "$s12StripeUICore21AddressSectionElementC05DummyC4LineC6didTapyycvs",
-                    "moduleName": "StripeUICore",
-                    "implicit": true,
-                    "spi_group_names": [
-                      "STP"
-                    ],
-                    "accessorKind": "set"
-                  },
-                  {
-                    "kind": "Accessor",
-                    "name": "Modify",
-                    "printedName": "Modify()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      }
-                    ],
-                    "declKind": "Accessor",
-                    "usr": "s:12StripeUICore21AddressSectionElementC05DummyC4LineC6didTapyycvM",
-                    "mangledName": "$s12StripeUICore21AddressSectionElementC05DummyC4LineC6didTapyycvM",
-                    "moduleName": "StripeUICore",
-                    "implicit": true,
-                    "spi_group_names": [
-                      "STP"
-                    ],
-                    "accessorKind": "_modify"
-                  }
-                ]
-              },
-              {
-                "kind": "Var",
                 "name": "theme",
                 "printedName": "theme",
                 "children": [
@@ -20317,7 +20411,7 @@
               {
                 "kind": "Constructor",
                 "name": "init",
-                "printedName": "init(theme:)",
+                "printedName": "init(theme:didTap:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -20330,11 +20424,29 @@
                     "name": "ElementsUITheme",
                     "printedName": "StripeUICore.ElementsUITheme",
                     "usr": "s:12StripeUICore15ElementsUIThemeV"
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ],
+                    "hasDefaultArg": true
                   }
                 ],
                 "declKind": "Constructor",
-                "usr": "s:12StripeUICore21AddressSectionElementC05DummyC4LineC5themeAeA15ElementsUIThemeV_tcfc",
-                "mangledName": "$s12StripeUICore21AddressSectionElementC05DummyC4LineC5themeAeA15ElementsUIThemeV_tcfc",
+                "usr": "s:12StripeUICore21AddressSectionElementC05DummyC4LineC5theme6didTapAeA15ElementsUIThemeV_yyctcfc",
+                "mangledName": "$s12StripeUICore21AddressSectionElementC05DummyC4LineC5theme6didTapAeA15ElementsUIThemeV_yyctcfc",
                 "moduleName": "StripeUICore",
                 "declAttributes": [
                   "Custom",
@@ -23472,6 +23584,29 @@
             "declKind": "Func",
             "usr": "s:12StripeUICore18PhoneNumberElementC22setSelectedCountryCode_019shouldUpdateDefaultD0ySS_SbtF",
             "mangledName": "$s12StripeUICore18PhoneNumberElementC22setSelectedCountryCode_019shouldUpdateDefaultD0ySS_SbtF",
+            "moduleName": "StripeUICore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "STP"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearPhoneNumber",
+            "printedName": "clearPhoneNumber()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12StripeUICore18PhoneNumberElementC05clearcD0yyF",
+            "mangledName": "$s12StripeUICore18PhoneNumberElementC05clearcD0yyF",
             "moduleName": "StripeUICore",
             "declAttributes": [
               "AccessControl"
@@ -41354,6 +41489,100 @@
           },
           {
             "kind": "Var",
+            "name": "closeFormTitle",
+            "printedName": "closeFormTitle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:SS10StripeCoreE9LocalizedO0A6UICoreE14closeFormTitleSSvpZ",
+            "mangledName": "$sSS10StripeCoreE9LocalizedO0A6UICoreE14closeFormTitleSSvpZ",
+            "moduleName": "StripeUICore",
+            "static": true,
+            "isFromExtension": true,
+            "spi_group_names": [
+              "STP"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:SS10StripeCoreE9LocalizedO0A6UICoreE14closeFormTitleSSvgZ",
+                "mangledName": "$sSS10StripeCoreE9LocalizedO0A6UICoreE14closeFormTitleSSvgZ",
+                "moduleName": "StripeUICore",
+                "static": true,
+                "isFromExtension": true,
+                "spi_group_names": [
+                  "STP"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paymentInfoWontBeSaved",
+            "printedName": "paymentInfoWontBeSaved",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:SS10StripeCoreE9LocalizedO0A6UICoreE22paymentInfoWontBeSavedSSvpZ",
+            "mangledName": "$sSS10StripeCoreE9LocalizedO0A6UICoreE22paymentInfoWontBeSavedSSvpZ",
+            "moduleName": "StripeUICore",
+            "static": true,
+            "isFromExtension": true,
+            "spi_group_names": [
+              "STP"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:SS10StripeCoreE9LocalizedO0A6UICoreE22paymentInfoWontBeSavedSSvgZ",
+                "mangledName": "$sSS10StripeCoreE9LocalizedO0A6UICoreE22paymentInfoWontBeSavedSSvgZ",
+                "moduleName": "StripeUICore",
+                "static": true,
+                "isFromExtension": true,
+                "spi_group_names": [
+                  "STP"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "ok",
             "printedName": "ok",
             "children": [
@@ -42115,7 +42344,7 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 2159,
+      "offset": 2292,
       "length": 1,
       "value": "6"
     },
@@ -42129,161 +42358,168 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "BooleanLiteral",
-      "offset": 7666,
+      "offset": 7843,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 17650,
+      "offset": 17827,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 17698,
+      "offset": 17875,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 17747,
+      "offset": 17924,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 17802,
+      "offset": 17979,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 18071,
+      "offset": 18248,
       "length": 5,
       "value": "0.922"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 18085,
+      "offset": 18262,
       "length": 5,
       "value": "0.933"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 18098,
+      "offset": 18275,
       "length": 5,
       "value": "0.945"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 18112,
+      "offset": 18289,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 18153,
+      "offset": 18330,
       "length": 5,
       "value": "0.471"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 18167,
+      "offset": 18344,
       "length": 5,
       "value": "0.471"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 18180,
+      "offset": 18357,
       "length": 5,
       "value": "0.502"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 18194,
+      "offset": 18371,
       "length": 4,
       "value": "0.36"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "BooleanLiteral",
-      "offset": 18254,
+      "offset": 18431,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
+      "kind": "BooleanLiteral",
+      "offset": 18717,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 18565,
+      "offset": 18856,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 19120,
+      "offset": 19411,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 19273,
+      "offset": 19564,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 19279,
+      "offset": 19570,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 19376,
+      "offset": 19667,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 19384,
+      "offset": 19675,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 19440,
+      "offset": 19731,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "BooleanLiteral",
-      "offset": 19692,
+      "offset": 19983,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Controls\/OneTimeCodeTextField.swift",
       "kind": "StringLiteral",
-      "offset": 17561,
+      "offset": 17738,
       "length": 9,
       "value": "\"StripeUICore.DigitView\""
     },
@@ -42423,42 +42659,42 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/DropdownFieldElement.swift",
       "kind": "IntegerLiteral",
-      "offset": 2276,
+      "offset": 2405,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/DropdownFieldElement.swift",
       "kind": "BooleanLiteral",
-      "offset": 2280,
+      "offset": 2409,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/DropdownFieldElement.swift",
       "kind": "IntegerLiteral",
-      "offset": 2447,
+      "offset": 2576,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/DropdownFieldElement.swift",
       "kind": "BooleanLiteral",
-      "offset": 2506,
+      "offset": 2635,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/DropdownFieldElement.swift",
       "kind": "IntegerLiteral",
-      "offset": 3397,
+      "offset": 3495,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/DropdownFieldElement.swift",
       "kind": "BooleanLiteral",
-      "offset": 3516,
+      "offset": 3614,
       "length": 5,
       "value": "false"
     },
@@ -42541,64 +42777,162 @@
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1435,
+      "length": 5,
+      "value": "248.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1443,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1457,
+      "length": 5,
+      "value": "248.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1465,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1478,
+      "length": 5,
+      "value": "248.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1486,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
       "kind": "IntegerLiteral",
-      "offset": 3220,
+      "offset": 1500,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1535,
+      "length": 5,
+      "value": "116.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1543,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1557,
+      "length": 5,
+      "value": "116.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1565,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1578,
+      "length": 5,
+      "value": "128.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1586,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "FloatLiteral",
+      "offset": 1600,
+      "length": 4,
+      "value": "0.18"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3526,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
       "kind": "IntegerLiteral",
-      "offset": 3358,
+      "offset": 3664,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
       "kind": "IntegerLiteral",
-      "offset": 3520,
+      "offset": 3826,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
       "kind": "IntegerLiteral",
-      "offset": 3636,
+      "offset": 3942,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
       "kind": "IntegerLiteral",
-      "offset": 3759,
+      "offset": 4065,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
       "kind": "FloatLiteral",
-      "offset": 4475,
+      "offset": 4856,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
       "kind": "IntegerLiteral",
-      "offset": 4523,
+      "offset": 4904,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
       "kind": "IntegerLiteral",
-      "offset": 4534,
+      "offset": 4915,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/ElementsUI.swift",
       "kind": "IntegerLiteral",
-      "offset": 4573,
+      "offset": 4954,
       "length": 1,
       "value": "4"
     },
@@ -42941,7 +43275,7 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeUICore\/StripeUICore\/Source\/Elements\/PhoneNumber\/PhoneNumberElement.swift",
       "kind": "BooleanLiteral",
-      "offset": 6455,
+      "offset": 6536,
       "length": 5,
       "value": "false"
     },

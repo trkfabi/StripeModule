@@ -24,8 +24,6 @@ public protocol ApplePayContextDelegate : StripeApplePay._stpinternal_STPApplePa
 }
 @objc(STPApplePayContext) public class STPApplePayContext : ObjectiveC.NSObject, PassKit.PKPaymentAuthorizationControllerDelegate {
   @objc(initWithPaymentRequest:delegate:) required public init?(paymentRequest: PassKit.PKPaymentRequest, delegate: StripeApplePay._stpinternal_STPApplePayContextDelegateBase?)
-  @available(iOSApplicationExtension, unavailable, message: "Use `presentApplePay(from:completion:)` in App Extensions.")
-  @available(macCatalystApplicationExtension, unavailable, message: "Use `presentApplePay(from:completion:)` in App Extensions.")
   @objc(presentApplePayWithCompletion:) public func presentApplePay(completion: StripeApplePay.STPVoidBlock? = nil)
   @objc(presentApplePayFromWindow:completion:) public func presentApplePay(from window: UIKit.UIWindow?, completion: StripeApplePay.STPVoidBlock? = nil)
   @available(*, deprecated, renamed: "presentApplePay(completion:)", message: "Use `presentApplePay(completion:)` instead.")

@@ -9,6 +9,7 @@
 import UIKit
 import TitaniumKit
 import StripeIdentity
+import StripePaymentSheet
 import StripeApplePay
 import PassKit
 import Foundation
@@ -87,22 +88,27 @@ class ComInzoriStripeModule: TiModule {
         })
     }
     
-    // Payments
-    @objc(startPayments:)
-    func startPayments(arguments: Array<Any>?) {
-        print("[DEBUG] startPayments method")
-        guard let arguments = arguments, let options = arguments[0] as? [String: Any] else { return }
-        guard let callback: KrollCallback = options["onComplete"] as? KrollCallback else { return }
+    
+    // Payments - from ti.stripe
+    var paymentSheet: PaymentSheet!
+    
+    @objc(initializePayments:)
+    func initializePayments(args: Array<Any>?) {
+        print("[DEBUG] initializePayments method")
+        guard let args = args, let params = args.first as? [String: Any] else { return }
         
-        let publishableKey = options["publishableKey"] as? String ?? ""
+        guard let publishableKey = params["publishableKey"] as? String else { return }
+        guard let callback: KrollCallback = params["onComplete"] as? KrollCallback else { return }
+        
         StripeAPI.defaultPublishableKey = publishableKey
+        STPAPIClient.shared.publishableKey = publishableKey
         let isApplePaySupported = StripeAPI.deviceSupportsApplePay()
-
         callback.call([["success": true, "message": "Stripe payments initialized", "isApplePaySupported": isApplePaySupported] as [String : Any]], thisObject: self)
     }
     
-    @objc(processPayment:)
-    func processPayment(arguments: Array<Any>?) {
+    // This is just for apple pay
+    @objc(showApplePaySheet:)
+    func showApplePaySheet(arguments: Array<Any>?) {
         guard let arguments = arguments, let options = arguments[0] as? [String: Any] else { return }
         
         let merchantIdentifier = options["merchantId"] as? String ?? "merchant.com.fluidtruck"
@@ -129,18 +135,106 @@ class ComInzoriStripeModule: TiModule {
         }
     }
     
-    @objc(setClientSecret:)
-    func setClientSecret(arguments: Array<Any>?) {
-        guard let arguments = arguments, let options = arguments[0] as? [String: Any] else { return }
-        client_secret = options["clientSecret"] as? String ?? ""
+
+    // This is the payment sheet for generic payment methods
+    @objc(showPaymentSheet:)
+    func showPaymentSheet(args: Array<Any>) {
+        guard let params = args.first as? [String: Any] else {
+            fatalError("Missing parameters when calling showPaymentSheet")
+        }
+        
+        let callback = params["onComplete"] as? KrollCallback
+        //let merchantIdentifier = params["merchantIdentifier"] as? String
+        //let merchantCountryCode = params["merchantCountryCode"] as? String
+        let merchantDisplayName = params["merchantDisplayName"] as? String
+        let customerId = params["customerId"] as? String
+        let customerEphemeralKeySecret = params["customerEphemeralKeySecret"] as? String
+        let paymentIntentClientSecret = params["paymentIntentClientSecret"] as? String
+        let appearance = params["appearance"] as? [String: Any]
+        
+        guard let customerId, let customerEphemeralKeySecret, let paymentIntentClientSecret, let callback else {
+          NSLog("[ERROR] Missing required parameters \"customerId\", \"customerEphemeralKeySecret\" and \"paymentIntentClientSecret\"")
+          return
+        }
+        
+        var configuration = PaymentSheet.Configuration()
+        // this is supposed to enable apple pay too in the sheet ?
+//        if let merchantIdentifier {
+//            configuration.applePay = .init(
+//                merchantId: merchantIdentifier,
+//                merchantCountryCode: merchantCountryCode!
+//            )
+//        }
+        
+        if let appearance {
+          configuration.appearance = mappedAppearance(appearance);
+        }
+        
+        if let merchantDisplayName {
+          configuration.merchantDisplayName = merchantDisplayName
+        }
+        
+        configuration.customer = .init(id: customerId, ephemeralKeySecret: customerEphemeralKeySecret)
+        
+        configuration.allowsDelayedPaymentMethods = true
+        self.paymentSheet = PaymentSheet(paymentIntentClientSecret: paymentIntentClientSecret, configuration: configuration)
+        
+        self.paymentSheet.present(from: TiApp.controller().topPresentedController()) { result in
+          switch result {
+              case .completed:
+                callback.call([["success": true]], thisObject: self)
+              case .canceled:
+                callback.call([["cancel": true]], thisObject: self)
+              case .failed(let error):
+                callback.call([["success": false, "error": error.localizedDescription] as [String : Any]], thisObject: self)
+          }
+        }
+    }
+      
+    private func mappedAppearance(_ params: [String: Any]) -> PaymentSheet.Appearance {
+        var appearance = PaymentSheet.Appearance()
+        
+        if let colors = params["colors"] as? [String: Any] {
+          if let background = colors["background"] {
+            appearance.colors.background = TiUtils.colorValue(background).color
+          }
+          if let text = colors["text"] {
+            appearance.colors.text = TiUtils.colorValue(text).color
+          }
+          if let textSecondary = colors["textSecondary"] {
+            appearance.colors.textSecondary = TiUtils.colorValue(textSecondary).color
+          }
+          if let primary = colors["primary"] {
+            appearance.colors.primary = TiUtils.colorValue(primary).color
+          }
+        }
+        
+        if let primaryButton = params["primaryButton"] as? [String: Any] {
+          if let borderRadius = primaryButton["borderRadius"] as? Float {
+            appearance.primaryButton.cornerRadius = CGFloat(borderRadius)
+          }
+          if let borderWidth = primaryButton["borderWidth"] as? Float {
+            appearance.primaryButton.borderWidth = CGFloat(borderWidth)
+          }
+          if let borderColor = primaryButton["borderColor"] as? Float {
+            appearance.primaryButton.borderColor = TiUtils.colorValue(borderColor).color
+          }
+        }
+        
+        if let font = params["font"] {
+          appearance.font.base = TiUtils.fontValue(font).font()
+        }
+        
+        return appearance
     }
 }
+    
 
+// Extension to process Apple Pay payments
 extension ComInzoriStripeModule: ApplePayContextDelegate {
 
     func applePayContext(_ context: STPApplePayContext, didCreatePaymentMethod paymentMethod: StripeAPI.PaymentMethod, paymentInformation: PKPayment, completion: @escaping STPIntentClientSecretCompletionBlock) {
         // Call the completion block with the client secret or an error
-        fireEvent("fluid:payment_status", with: ["success": true, "event": "didCreatePaymentMethod", "message": "Payment method created \(paymentMethod)"] as [String : Any])
         completion(client_secret, nil);
     }
     
@@ -160,53 +254,6 @@ extension ComInzoriStripeModule: ApplePayContextDelegate {
             break
         }
     }
-}
-
-// just for testing
-func createPaymentIntent(url: String, amount: Decimal, currency: String, apiSecretKey: String) {
-    // Prepare the request URL
-    let url = URL(string: url)!
-    
-    // Prepare the request body parameters
-    let parameters: [String: Any] = [
-        "amount": amount,
-        "currency": currency
-    ]
-    
-    // Create the request
-    var request = URLRequest(url: url)
-    request.httpMethod = "POST"
-    request.setValue("Bearer "+apiSecretKey, forHTTPHeaderField: "Authorization")
-    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-    
-    // Set the request body data
-    let bodyData = parameters
-        .map { "\($0)=\($1)" }
-        .joined(separator: "&")
-    request.httpBody = bodyData.data(using: .utf8)
-    
-    // Perform the request
-    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-        if let error = error {
-            print("Error: \(error)")
-            return
-        }
-        
-        guard let data = data else {
-            print("No data received")
-            return
-        }
-        
-        // Process the response data
-        let responseString = String(data: data, encoding: .utf8)
-        print("Response: \(responseString ?? "")")
-        
-        // Parse and handle the response as needed
-        // ...
-        
-    }
-    
-    task.resume()
 }
 
 

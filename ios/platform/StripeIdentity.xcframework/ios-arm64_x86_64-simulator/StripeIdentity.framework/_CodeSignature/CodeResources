@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/StripeIdentity-Swift.h</key>
 		<data>
-		sO57JdXMW358SSEjfnuQ3r9cWt4=
+		vct1/XIIkeo0azEy6nbgF3iYWtg=
 		</data>
 		<key>Headers/StripeIdentity.h</key>
 		<data>
@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hoPdD1ZzuEdXNgOxsIcrfGJP/6Y=
+		yFYYig8mWtQH8hckvJ+JfR1Ysfw=
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		5SOIu8RKNgycdY6OOaVB+WR2xvg=
+		jM4DBSQLEYT6mYIS/lgO9AyrwcA=
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		sv81P7R6u7JGIfMdKvaPoo1TsZk=
+		Z+Sr0ucj59B13orucnQZZwOQuvk=
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		zdoY+Npw0w3xCyL3ih1HZP+V0OA=
+		7adUsqTUOptjUuBhq3gz/qjW+tE=
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5HqZJDe7ESyjBq0gT29xLeaM/kw=
+		GuwXEhuexbtL7LOCTuWla47pe1I=
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		5SOIu8RKNgycdY6OOaVB+WR2xvg=
+		jM4DBSQLEYT6mYIS/lgO9AyrwcA=
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		CqipNw4+o6WCyfA79e+7C19+lOo=
+		Hgb5pGx7HefSuo5DoeGUie4ck0I=
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		CSZYcnhltNbEqfu38UmCvjevHuY=
+		/4063ItN3qIFbUXjdenSIySmw/o=
 		</data>
 		<key>Modules/StripeIdentity.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mciZtRqzvoIne66ZmJxt/CA5JDE=
+		W0kO8MCBAMBnHzWauqFTDJ7ofug=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -127,7 +127,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cSCLSDIbSRDJSDVP+/QvXG/8fQw=
+			qp5wurCZeS4ABBL56njgEsdZXxY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -215,7 +215,7 @@
 		</dict>
 		<key>icon_add@3x.png</key>
 		<data>
-		jYCh85aq/sWMJxbLW9oWKFm/0JE=
+		dME8rBUEl/IVQgcOTWS06LQ1l4M=
 		</data>
 		<key>icon_camera@3x.png</key>
 		<data>
@@ -236,6 +236,10 @@
 		<key>icon_info@3x.png</key>
 		<data>
 		1uhnju0ib6jcMgEzl+zKE1p5nuk=
+		</data>
+		<key>icon_warning2@3x.png</key>
+		<data>
+		NqJKN1VnT2uMMT39+JnwPkiOsTs=
 		</data>
 		<key>icon_warning@3x.png</key>
 		<data>
@@ -468,7 +472,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ma+jX/WUvLHeA0rAC/sPPDsp/ADYGNzGwOm7QFWSvKM=
+			neYJoWpygmbpBPDIEJP69nXUJr46HW5OQxyEnn7SCy8=
 			</data>
 		</dict>
 		<key>Headers/StripeIdentity.h</key>
@@ -482,14 +486,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zp/zZ5rk+nQXKgh2XRYjFgribVEpKY9uQ/tshtv7O4M=
+			C1h9pMiv8/0ByOQZQsOdhmm13NjeNGkOgih/ronGAsw=
 			</data>
 		</dict>
 		<key>Modules/StripeIdentity.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dO7WkkorFepATYug6UWfQDTlpQGpoxikwlZtjXEb6pI=
+			b8HTG9hHHWWBhT8jTxOmOw2kF9emBsyx6ezRaZouLzo=
 			</data>
 		</dict>
 		<key>Modules/StripeIdentity.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -503,28 +507,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RxdDEoJCXj9hAdqio7oCe3gWOE93eN29eOLrxokpfRc=
+			D5I08rnm/c0+Gqvqhz0Xu7wzv3vO6SivDVgPaSnBpG0=
 			</data>
 		</dict>
 		<key>Modules/StripeIdentity.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PgB3wDNPkMjMH8m7T6dmeiOzVmbOk19bf871yJ6Vlss=
+			K1TU8ORswAWSpVUEpZVcHY2Pfsi0ENY8+BDZ4bBGbG8=
 			</data>
 		</dict>
 		<key>Modules/StripeIdentity.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zp/zZ5rk+nQXKgh2XRYjFgribVEpKY9uQ/tshtv7O4M=
+			C1h9pMiv8/0ByOQZQsOdhmm13NjeNGkOgih/ronGAsw=
 			</data>
 		</dict>
 		<key>Modules/StripeIdentity.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YAQr+Gda1O0IgaG7UTIEhxjnePK+UqmeC9wZQNItyL0=
+			tJXU7HHEotXn9nwoYa0pEmvX97u/RBiCSabBCdpndR4=
 			</data>
 		</dict>
 		<key>Modules/StripeIdentity.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -538,14 +542,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zuaukq8dGeN6W6cyYGveBqj78S6j31mYYUlf7Q1GyAM=
+			D+XZ/VNqvdUMLbwKw6WDZl8wNW4fWpMTZjoQJ9h3tyI=
 			</data>
 		</dict>
 		<key>Modules/StripeIdentity.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DihzfFi8BwJUIXL2ZN8aJLy0/bW5/r7lmzdtX6ieG3w=
+			JA17Oa47J+a5jty2Bv1qs5+nssAFOHdnqyXAlUSjBmo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -622,7 +626,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OwOSUTkfFyNkZP2tVCkeSyxxEmO4TBgRhUKnUrREkAY=
+			kvqqNoeDDdf9u19LZmE0MdAc4/b/ZzUO8NBMTpmaQK8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -712,7 +716,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DEAuk+1fg/mULDEyA6/gzmWTQjtY7epcqlvwVEclxe8=
+			wkUUEZ2UZIcMeZeVhP+4rh7s3EkOgy1Mq6FzEWV/0Rw=
 			</data>
 		</dict>
 		<key>icon_camera@3x.png</key>
@@ -748,6 +752,13 @@
 			<key>hash2</key>
 			<data>
 			TyIjljoTzvjhlYjwxUh28r9f7nCybti0c9MP9pSPHow=
+			</data>
+		</dict>
+		<key>icon_warning2@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6G4pQULb8xnrIjv+n8D3MH11o1hHo43ajd2Qk7R88Zg=
 			</data>
 		</dict>
 		<key>icon_warning@3x.png</key>

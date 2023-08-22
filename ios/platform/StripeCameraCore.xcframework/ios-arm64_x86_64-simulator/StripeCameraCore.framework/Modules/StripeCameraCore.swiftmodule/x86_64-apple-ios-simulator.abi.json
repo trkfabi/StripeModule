@@ -695,7 +695,6 @@
         "declAttributes": [
           "AccessControl",
           "SPIAccessControl",
-          "Available",
           "RawDocComment"
         ],
         "spi_group_names": [

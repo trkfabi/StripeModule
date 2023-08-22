@@ -397,6 +397,7 @@ SWIFT_CLASS_NAMED("FormView")
 SWIFT_CLASS_NAMED("OneTimeCodeTextField")
 @interface STP_Internal_OneTimeCodeTextField : UIControl
 @property (nonatomic, readonly) BOOL canBecomeFirstResponder;
+@property (nonatomic, getter=isEnabled) BOOL enabled;
 @property (nonatomic) UIKeyboardType keyboardType;
 @property (nonatomic) UITextContentType _Nullable textContentType;
 @property (nonatomic, strong) UITextRange * _Nullable selectedTextRange;

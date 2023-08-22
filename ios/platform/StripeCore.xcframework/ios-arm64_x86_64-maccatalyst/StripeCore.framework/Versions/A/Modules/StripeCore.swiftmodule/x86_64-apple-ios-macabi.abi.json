@@ -8833,6 +8833,30 @@
       },
       {
         "kind": "Import",
+        "name": "CoreTelephony",
+        "printedName": "CoreTelephony",
+        "declKind": "Import",
+        "moduleName": "StripeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "StripeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "SystemConfiguration",
+        "printedName": "SystemConfiguration",
+        "declKind": "Import",
+        "moduleName": "StripeCore"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -11734,8 +11758,8 @@
           },
           {
             "kind": "Var",
-            "name": "link2FAStart",
-            "printedName": "link2FAStart",
+            "name": "linkPopupShow",
+            "printedName": "linkPopupShow",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -11765,8 +11789,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:10StripeCore16STPAnalyticEventO12link2FAStartyA2CmF",
-            "mangledName": "$s10StripeCore16STPAnalyticEventO12link2FAStartyA2CmF",
+            "usr": "s:10StripeCore16STPAnalyticEventO13linkPopupShowyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO13linkPopupShowyA2CmF",
             "moduleName": "StripeCore",
             "declAttributes": [
               "RawDocComment"
@@ -11777,8 +11801,8 @@
           },
           {
             "kind": "Var",
-            "name": "link2FAStartFailure",
-            "printedName": "link2FAStartFailure",
+            "name": "linkPopupSuccess",
+            "printedName": "linkPopupSuccess",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -11808,8 +11832,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:10StripeCore16STPAnalyticEventO19link2FAStartFailureyA2CmF",
-            "mangledName": "$s10StripeCore16STPAnalyticEventO19link2FAStartFailureyA2CmF",
+            "usr": "s:10StripeCore16STPAnalyticEventO16linkPopupSuccessyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO16linkPopupSuccessyA2CmF",
             "moduleName": "StripeCore",
             "spi_group_names": [
               "STP"
@@ -11817,8 +11841,8 @@
           },
           {
             "kind": "Var",
-            "name": "link2FAComplete",
-            "printedName": "link2FAComplete",
+            "name": "linkPopupCancel",
+            "printedName": "linkPopupCancel",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -11848,8 +11872,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:10StripeCore16STPAnalyticEventO15link2FACompleteyA2CmF",
-            "mangledName": "$s10StripeCore16STPAnalyticEventO15link2FACompleteyA2CmF",
+            "usr": "s:10StripeCore16STPAnalyticEventO15linkPopupCancelyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO15linkPopupCancelyA2CmF",
             "moduleName": "StripeCore",
             "spi_group_names": [
               "STP"
@@ -11857,8 +11881,8 @@
           },
           {
             "kind": "Var",
-            "name": "link2FACancel",
-            "printedName": "link2FACancel",
+            "name": "linkPopupSkipped",
+            "printedName": "linkPopupSkipped",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -11888,8 +11912,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:10StripeCore16STPAnalyticEventO13link2FACancelyA2CmF",
-            "mangledName": "$s10StripeCore16STPAnalyticEventO13link2FACancelyA2CmF",
+            "usr": "s:10StripeCore16STPAnalyticEventO16linkPopupSkippedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO16linkPopupSkippedyA2CmF",
             "moduleName": "StripeCore",
             "spi_group_names": [
               "STP"
@@ -11897,8 +11921,8 @@
           },
           {
             "kind": "Var",
-            "name": "link2FAFailure",
-            "printedName": "link2FAFailure",
+            "name": "linkPopupError",
+            "printedName": "linkPopupError",
             "children": [
               {
                 "kind": "TypeFunc",
@@ -11928,8 +11952,48 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:10StripeCore16STPAnalyticEventO14link2FAFailureyA2CmF",
-            "mangledName": "$s10StripeCore16STPAnalyticEventO14link2FAFailureyA2CmF",
+            "usr": "s:10StripeCore16STPAnalyticEventO14linkPopupErroryA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO14linkPopupErroryA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "linkPopupLogout",
+            "printedName": "linkPopupLogout",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO15linkPopupLogoutyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO15linkPopupLogoutyA2CmF",
             "moduleName": "StripeCore",
             "spi_group_names": [
               "STP"
@@ -12136,6 +12200,529 @@
             "declKind": "EnumElement",
             "usr": "s:10StripeCore16STPAnalyticEventO29luxeImageSelectorIconNotFoundyA2CmF",
             "mangledName": "$s10StripeCore16STPAnalyticEventO29luxeImageSelectorIconNotFoundyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_add_payment_method_screen_presented",
+            "printedName": "cs_add_payment_method_screen_presented",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO38cs_add_payment_method_screen_presentedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO38cs_add_payment_method_screen_presentedyA2CmF",
+            "moduleName": "StripeCore",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_select_payment_method_screen_presented",
+            "printedName": "cs_select_payment_method_screen_presented",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO41cs_select_payment_method_screen_presentedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO41cs_select_payment_method_screen_presentedyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_select_payment_method_screen_confirmed_savedpm_success",
+            "printedName": "cs_select_payment_method_screen_confirmed_savedpm_success",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO57cs_select_payment_method_screen_confirmed_savedpm_successyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO57cs_select_payment_method_screen_confirmed_savedpm_successyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_select_payment_method_screen_confirmed_savedpm_failure",
+            "printedName": "cs_select_payment_method_screen_confirmed_savedpm_failure",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO57cs_select_payment_method_screen_confirmed_savedpm_failureyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO57cs_select_payment_method_screen_confirmed_savedpm_failureyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_select_payment_method_screen_edit_tapped",
+            "printedName": "cs_select_payment_method_screen_edit_tapped",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO43cs_select_payment_method_screen_edit_tappedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO43cs_select_payment_method_screen_edit_tappedyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_select_payment_method_screen_done_tapped",
+            "printedName": "cs_select_payment_method_screen_done_tapped",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO43cs_select_payment_method_screen_done_tappedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO43cs_select_payment_method_screen_done_tappedyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_select_payment_method_screen_removepm_success",
+            "printedName": "cs_select_payment_method_screen_removepm_success",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO48cs_select_payment_method_screen_removepm_successyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO48cs_select_payment_method_screen_removepm_successyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_select_payment_method_screen_removepm_failure",
+            "printedName": "cs_select_payment_method_screen_removepm_failure",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO48cs_select_payment_method_screen_removepm_failureyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO48cs_select_payment_method_screen_removepm_failureyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_add_payment_method_via_setupintent_success",
+            "printedName": "cs_add_payment_method_via_setupintent_success",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO45cs_add_payment_method_via_setupintent_successyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO45cs_add_payment_method_via_setupintent_successyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_add_payment_method_via_setupintent_canceled",
+            "printedName": "cs_add_payment_method_via_setupintent_canceled",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO46cs_add_payment_method_via_setupintent_canceledyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO46cs_add_payment_method_via_setupintent_canceledyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_add_payment_method_via_setupintent_failure",
+            "printedName": "cs_add_payment_method_via_setupintent_failure",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO45cs_add_payment_method_via_setupintent_failureyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO45cs_add_payment_method_via_setupintent_failureyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_add_payment_method_via_createAttach_success",
+            "printedName": "cs_add_payment_method_via_createAttach_success",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO46cs_add_payment_method_via_createAttach_successyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO46cs_add_payment_method_via_createAttach_successyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cs_add_payment_method_via_createAttach_failure",
+            "printedName": "cs_add_payment_method_via_createAttach_failure",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO46cs_add_payment_method_via_createAttach_failureyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO46cs_add_payment_method_via_createAttach_failureyA2CmF",
             "moduleName": "StripeCore",
             "spi_group_names": [
               "STP"
@@ -12386,6 +12973,255 @@
             "declAttributes": [
               "RawDocComment"
             ],
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paymentSheetLoadStarted",
+            "printedName": "paymentSheetLoadStarted",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO23paymentSheetLoadStartedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO23paymentSheetLoadStartedyA2CmF",
+            "moduleName": "StripeCore",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paymentSheetLoadSucceeded",
+            "printedName": "paymentSheetLoadSucceeded",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO25paymentSheetLoadSucceededyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO25paymentSheetLoadSucceededyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paymentSheetLoadFailed",
+            "printedName": "paymentSheetLoadFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO22paymentSheetLoadFailedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO22paymentSheetLoadFailedyA2CmF",
+            "moduleName": "StripeCore",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paymentSheetDismissed",
+            "printedName": "paymentSheetDismissed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO21paymentSheetDismissedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO21paymentSheetDismissedyA2CmF",
+            "moduleName": "StripeCore",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paymentSheetCarouselPaymentMethodTapped",
+            "printedName": "paymentSheetCarouselPaymentMethodTapped",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO39paymentSheetCarouselPaymentMethodTappedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO39paymentSheetCarouselPaymentMethodTappedyA2CmF",
+            "moduleName": "StripeCore",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paymentSheetConfirmButtonTapped",
+            "printedName": "paymentSheetConfirmButtonTapped",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeCore.STPAnalyticEvent.Type) -> StripeCore.STPAnalyticEvent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAnalyticEvent",
+                    "printedName": "StripeCore.STPAnalyticEvent",
+                    "usr": "s:10StripeCore16STPAnalyticEventO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeCore.STPAnalyticEvent.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "STPAnalyticEvent",
+                        "printedName": "StripeCore.STPAnalyticEvent",
+                        "usr": "s:10StripeCore16STPAnalyticEventO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10StripeCore16STPAnalyticEventO31paymentSheetConfirmButtonTappedyA2CmF",
+            "mangledName": "$s10StripeCore16STPAnalyticEventO31paymentSheetConfirmButtonTappedyA2CmF",
+            "moduleName": "StripeCore",
             "spi_group_names": [
               "STP"
             ]
@@ -27297,8 +28133,8 @@
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/API Bindings\/StripeAPIConfiguration+Version.swift",
       "kind": "StringLiteral",
       "offset": 345,
-      "length": 8,
-      "value": "\"23.8.0\""
+      "length": 9,
+      "value": "\"23.13.0\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/API Bindings\/StripeServiceError.swift",
@@ -27884,114 +28720,254 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6003,
-      "length": 16,
-      "value": "\"link.2fa.start\""
+      "offset": 6006,
+      "length": 17,
+      "value": "\"link.popup.show\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6051,
-      "length": 24,
-      "value": "\"link.2fa.start_failure\""
+      "offset": 6052,
+      "length": 20,
+      "value": "\"link.popup.success\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6103,
+      "offset": 6100,
       "length": 19,
-      "value": "\"link.2fa.complete\""
+      "value": "\"link.popup.cancel\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
       "offset": 6148,
-      "length": 17,
-      "value": "\"link.2fa.cancel\""
+      "length": 20,
+      "value": "\"link.popup.skipped\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6192,
+      "offset": 6195,
       "length": 18,
-      "value": "\"link.2fa.failure\""
+      "value": "\"link.popup.error\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6273,
+      "offset": 6241,
+      "length": 19,
+      "value": "\"link.popup.logout\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 6323,
       "length": 29,
       "value": "\"link.account_lookup.failure\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6356,
+      "offset": 6406,
       "length": 24,
       "value": "\"luxe_serialize_failure\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6425,
+      "offset": 6475,
       "length": 37,
       "value": "\"luxe_image_selector_icon_downloaded\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6506,
+      "offset": 6556,
       "length": 38,
       "value": "\"luxe_image_selector_icon_from_bundle\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6586,
+      "offset": 6636,
       "length": 36,
       "value": "\"luxe_image_selector_icon_not_found\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6678,
+      "offset": 6754,
+      "length": 40,
+      "value": "\"cs_add_payment_method_screen_presented\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 6848,
+      "length": 43,
+      "value": "\"cs_select_payment_method_screen_presented\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 6962,
+      "length": 59,
+      "value": "\"cs_select_payment_method_screen_confirmed_savedpm_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7091,
+      "length": 59,
+      "value": "\"cs_select_payment_method_screen_confirmed_savedpm_failure\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7207,
+      "length": 45,
+      "value": "\"cs_select_payment_method_screen_edit_tapped\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7308,
+      "length": 45,
+      "value": "\"cs_select_payment_method_screen_done_tapped\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7415,
+      "length": 50,
+      "value": "\"cs_select_payment_method_screen_removepm_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7526,
+      "length": 50,
+      "value": "\"cs_select_payment_method_screen_removepm_failure\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7635,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_setup_intent_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7742,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_setupintent_canceled\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7848,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_setup_intent_failure\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7956,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_createAttach_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8063,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_createAttach_failure\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8167,
       "length": 17,
       "value": "\"mc_address_show\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6724,
+      "offset": 8213,
       "length": 22,
       "value": "\"mc_address_completed\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6841,
+      "offset": 8330,
       "length": 21,
       "value": "\"pmmv_load_succeeded\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6911,
+      "offset": 8400,
       "length": 18,
       "value": "\"pmmv_load_failed\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6974,
+      "offset": 8463,
       "length": 13,
       "value": "\"pmmv_tapped\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 7067,
+      "offset": 8556,
       "length": 18,
       "value": "\"mc_force_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8654,
+      "length": 17,
+      "value": "\"mc_load_started\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8709,
+      "length": 19,
+      "value": "\"mc_load_succeeded\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8763,
+      "length": 16,
+      "value": "\"mc_load_failed\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8850,
+      "length": 12,
+      "value": "\"mc_dismiss\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8952,
+      "length": 35,
+      "value": "\"mc_carousel_payment_method_tapped\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 9031,
+      "length": 26,
+      "value": "\"mc_confirm_button_tapped\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
@@ -28493,114 +29469,254 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6003,
-      "length": 16,
-      "value": "\"link.2fa.start\""
+      "offset": 6006,
+      "length": 17,
+      "value": "\"link.popup.show\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6051,
-      "length": 24,
-      "value": "\"link.2fa.start_failure\""
+      "offset": 6052,
+      "length": 20,
+      "value": "\"link.popup.success\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6103,
+      "offset": 6100,
       "length": 19,
-      "value": "\"link.2fa.complete\""
+      "value": "\"link.popup.cancel\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
       "offset": 6148,
-      "length": 17,
-      "value": "\"link.2fa.cancel\""
+      "length": 20,
+      "value": "\"link.popup.skipped\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6192,
+      "offset": 6195,
       "length": 18,
-      "value": "\"link.2fa.failure\""
+      "value": "\"link.popup.error\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6273,
+      "offset": 6241,
+      "length": 19,
+      "value": "\"link.popup.logout\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 6323,
       "length": 29,
       "value": "\"link.account_lookup.failure\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6356,
+      "offset": 6406,
       "length": 24,
       "value": "\"luxe_serialize_failure\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6425,
+      "offset": 6475,
       "length": 37,
       "value": "\"luxe_image_selector_icon_downloaded\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6506,
+      "offset": 6556,
       "length": 38,
       "value": "\"luxe_image_selector_icon_from_bundle\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6586,
+      "offset": 6636,
       "length": 36,
       "value": "\"luxe_image_selector_icon_not_found\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6678,
+      "offset": 6754,
+      "length": 40,
+      "value": "\"cs_add_payment_method_screen_presented\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 6848,
+      "length": 43,
+      "value": "\"cs_select_payment_method_screen_presented\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 6962,
+      "length": 59,
+      "value": "\"cs_select_payment_method_screen_confirmed_savedpm_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7091,
+      "length": 59,
+      "value": "\"cs_select_payment_method_screen_confirmed_savedpm_failure\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7207,
+      "length": 45,
+      "value": "\"cs_select_payment_method_screen_edit_tapped\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7308,
+      "length": 45,
+      "value": "\"cs_select_payment_method_screen_done_tapped\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7415,
+      "length": 50,
+      "value": "\"cs_select_payment_method_screen_removepm_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7526,
+      "length": 50,
+      "value": "\"cs_select_payment_method_screen_removepm_failure\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7635,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_setup_intent_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7742,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_setupintent_canceled\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7848,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_setup_intent_failure\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 7956,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_createAttach_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8063,
+      "length": 48,
+      "value": "\"cs_add_payment_method_via_createAttach_failure\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8167,
       "length": 17,
       "value": "\"mc_address_show\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6724,
+      "offset": 8213,
       "length": 22,
       "value": "\"mc_address_completed\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6841,
+      "offset": 8330,
       "length": 21,
       "value": "\"pmmv_load_succeeded\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6911,
+      "offset": 8400,
       "length": 18,
       "value": "\"pmmv_load_failed\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6974,
+      "offset": 8463,
       "length": 13,
       "value": "\"pmmv_tapped\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
       "kind": "StringLiteral",
-      "offset": 7067,
+      "offset": 8556,
       "length": 18,
       "value": "\"mc_force_success\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8654,
+      "length": 17,
+      "value": "\"mc_load_started\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8709,
+      "length": 19,
+      "value": "\"mc_load_succeeded\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8763,
+      "length": 16,
+      "value": "\"mc_load_failed\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8850,
+      "length": 12,
+      "value": "\"mc_dismiss\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 8952,
+      "length": 35,
+      "value": "\"mc_carousel_payment_method_tapped\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Analytics\/STPAnalyticEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 9031,
+      "length": 26,
+      "value": "\"mc_confirm_button_tapped\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeCore\/StripeCore\/Source\/Categories\/Dictionary+Stripe.swift",

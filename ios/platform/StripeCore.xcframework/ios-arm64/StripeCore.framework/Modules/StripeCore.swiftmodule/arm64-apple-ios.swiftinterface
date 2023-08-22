@@ -4,10 +4,12 @@
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import CoreGraphics
+import CoreTelephony
 import Foundation
 import PassKit
 @_exported import StripeCore
 import Swift
+import SystemConfiguration
 import UIKit
 import _Concurrency
 import _StringProcessing

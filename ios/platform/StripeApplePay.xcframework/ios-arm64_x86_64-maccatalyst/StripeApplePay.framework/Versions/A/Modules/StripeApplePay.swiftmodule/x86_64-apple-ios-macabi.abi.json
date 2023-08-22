@@ -1868,8 +1868,8 @@
         "children": [
           {
             "kind": "Var",
-            "name": "FORCE_SUCCESS",
-            "printedName": "FORCE_SUCCESS",
+            "name": "COMPLETE_WITHOUT_CONFIRMING_INTENT",
+            "printedName": "COMPLETE_WITHOUT_CONFIRMING_INTENT",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1879,8 +1879,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:14StripeApplePay08STPAppleC7ContextC13FORCE_SUCCESSSSvpZ",
-            "mangledName": "$s14StripeApplePay08STPAppleC7ContextC13FORCE_SUCCESSSSvpZ",
+            "usr": "s:14StripeApplePay08STPAppleC7ContextC34COMPLETE_WITHOUT_CONFIRMING_INTENTSSvpZ",
+            "mangledName": "$s14StripeApplePay08STPAppleC7ContextC34COMPLETE_WITHOUT_CONFIRMING_INTENTSSvpZ",
             "moduleName": "StripeApplePay",
             "static": true,
             "declAttributes": [
@@ -1910,8 +1910,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:14StripeApplePay08STPAppleC7ContextC13FORCE_SUCCESSSSvgZ",
-                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC13FORCE_SUCCESSSSvgZ",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC34COMPLETE_WITHOUT_CONFIRMING_INTENTSSvgZ",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC34COMPLETE_WITHOUT_CONFIRMING_INTENTSSvgZ",
                 "moduleName": "StripeApplePay",
                 "static": true,
                 "implicit": true,
@@ -2020,8 +2020,6 @@
             "declAttributes": [
               "AccessControl",
               "ObjC",
-              "Available",
-              "Available",
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
@@ -2470,6 +2468,398 @@
             ]
           },
           {
+            "kind": "TypeDecl",
+            "name": "ConfirmType",
+            "printedName": "ConfirmType",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "client",
+                "printedName": "client",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(StripeApplePay.STPApplePayContext.ConfirmType.Type) -> StripeApplePay.STPApplePayContext.ConfirmType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConfirmType",
+                        "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                        "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "StripeApplePay.STPApplePayContext.ConfirmType.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ConfirmType",
+                            "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                            "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO6clientyA2EmF",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO6clientyA2EmF",
+                "moduleName": "StripeApplePay",
+                "fixedbinaryorder": 0,
+                "spi_group_names": [
+                  "STP"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "server",
+                "printedName": "server",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(StripeApplePay.STPApplePayContext.ConfirmType.Type) -> StripeApplePay.STPApplePayContext.ConfirmType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConfirmType",
+                        "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                        "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "StripeApplePay.STPApplePayContext.ConfirmType.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ConfirmType",
+                            "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                            "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO6serveryA2EmF",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO6serveryA2EmF",
+                "moduleName": "StripeApplePay",
+                "fixedbinaryorder": 1,
+                "spi_group_names": [
+                  "STP"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "none",
+                "printedName": "none",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(StripeApplePay.STPApplePayContext.ConfirmType.Type) -> StripeApplePay.STPApplePayContext.ConfirmType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConfirmType",
+                        "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                        "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "StripeApplePay.STPApplePayContext.ConfirmType.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ConfirmType",
+                            "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                            "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO4noneyA2EmF",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO4noneyA2EmF",
+                "moduleName": "StripeApplePay",
+                "declAttributes": [
+                  "RawDocComment"
+                ],
+                "fixedbinaryorder": 2,
+                "spi_group_names": [
+                  "STP"
+                ]
+              },
+              {
+                "kind": "Function",
+                "name": "==",
+                "printedName": "==(_:_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConfirmType",
+                    "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                    "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConfirmType",
+                    "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                    "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO2eeoiySbAE_AEtFZ",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO2eeoiySbAE_AEtFZ",
+                "moduleName": "StripeApplePay",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "STP"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Var",
+                "name": "hashValue",
+                "printedName": "hashValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO9hashValueSivp",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO9hashValueSivp",
+                "moduleName": "StripeApplePay",
+                "implicit": true,
+                "spi_group_names": [
+                  "STP"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO9hashValueSivg",
+                    "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO9hashValueSivg",
+                    "moduleName": "StripeApplePay",
+                    "implicit": true,
+                    "spi_group_names": [
+                      "STP"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Function",
+                "name": "hash",
+                "printedName": "hash(into:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Hasher",
+                    "printedName": "Swift.Hasher",
+                    "paramValueOwnership": "InOut",
+                    "usr": "s:s6HasherV"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO4hash4intoys6HasherVz_tF",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO4hash4intoys6HasherVz_tF",
+                "moduleName": "StripeApplePay",
+                "implicit": true,
+                "spi_group_names": [
+                  "STP"
+                ],
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO",
+            "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO",
+            "moduleName": "StripeApplePay",
+            "declAttributes": [
+              "AccessControl",
+              "Frozen",
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "STP"
+            ],
+            "isEnumExhaustive": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "confirmType",
+            "printedName": "confirmType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "StripeApplePay.STPApplePayContext.ConfirmType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConfirmType",
+                    "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                    "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14StripeApplePay08STPAppleC7ContextC11confirmTypeAC07ConfirmG0OSgvp",
+            "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11confirmTypeAC07ConfirmG0OSgvp",
+            "moduleName": "StripeApplePay",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "SPIAccessControl",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "STP"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "StripeApplePay.STPApplePayContext.ConfirmType?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConfirmType",
+                        "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                        "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC11confirmTypeAC07ConfirmG0OSgvg",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11confirmTypeAC07ConfirmG0OSgvg",
+                "moduleName": "StripeApplePay",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "StripeApplePay.STPApplePayContext.ConfirmType?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConfirmType",
+                        "printedName": "StripeApplePay.STPApplePayContext.ConfirmType",
+                        "usr": "s:14StripeApplePay08STPAppleC7ContextC11ConfirmTypeO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC11confirmTypeAC07ConfirmG0OSgvs",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11confirmTypeAC07ConfirmG0OSgvs",
+                "moduleName": "StripeApplePay",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14StripeApplePay08STPAppleC7ContextC11confirmTypeAC07ConfirmG0OSgvM",
+                "mangledName": "$s14StripeApplePay08STPAppleC7ContextC11confirmTypeAC07ConfirmG0OSgvM",
+                "moduleName": "StripeApplePay",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "responds",
             "printedName": "responds(to:)",
@@ -2733,6 +3123,39 @@
               "ObjC",
               "AccessControl",
               "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "makeUnknownError",
+            "printedName": "makeUnknownError(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NSError",
+                "printedName": "Foundation.NSError",
+                "usr": "c:objc(cs)NSError"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14StripeApplePay08STPAppleC7ContextC16makeUnknownError7messageSo7NSErrorCSS_tFZ",
+            "mangledName": "$s14StripeApplePay08STPAppleC7ContextC16makeUnknownError7messageSo7NSErrorCSS_tFZ",
+            "moduleName": "StripeApplePay",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "STP"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -21043,6 +21466,316 @@
                 "mangledName": "$sSe"
               }
             ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Token",
+            "printedName": "Token",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "_allResponseFieldsStorage",
+                "printedName": "_allResponseFieldsStorage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "StripeCore.NonEncodableParameters?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NonEncodableParameters",
+                        "printedName": "StripeCore.NonEncodableParameters",
+                        "usr": "s:10StripeCore22NonEncodableParametersV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV25_allResponseFieldsStorageAA22NonEncodableParametersVSgvp",
+                "mangledName": "$s10StripeCore0A3APIC0A8ApplePayE5TokenV25_allResponseFieldsStorageAA22NonEncodableParametersVSgvp",
+                "moduleName": "StripeApplePay",
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "spi_group_names": [
+                  "StripeApplePayTokenization"
+                ],
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "StripeCore.NonEncodableParameters?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NonEncodableParameters",
+                            "printedName": "StripeCore.NonEncodableParameters",
+                            "usr": "s:10StripeCore22NonEncodableParametersV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV25_allResponseFieldsStorageAA22NonEncodableParametersVSgvg",
+                    "mangledName": "$s10StripeCore0A3APIC0A8ApplePayE5TokenV25_allResponseFieldsStorageAA22NonEncodableParametersVSgvg",
+                    "moduleName": "StripeApplePay",
+                    "implicit": true,
+                    "spi_group_names": [
+                      "StripeApplePayTokenization"
+                    ],
+                    "accessorKind": "get"
+                  },
+                  {
+                    "kind": "Accessor",
+                    "name": "Set",
+                    "printedName": "Set()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "StripeCore.NonEncodableParameters?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NonEncodableParameters",
+                            "printedName": "StripeCore.NonEncodableParameters",
+                            "usr": "s:10StripeCore22NonEncodableParametersV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV25_allResponseFieldsStorageAA22NonEncodableParametersVSgvs",
+                    "mangledName": "$s10StripeCore0A3APIC0A8ApplePayE5TokenV25_allResponseFieldsStorageAA22NonEncodableParametersVSgvs",
+                    "moduleName": "StripeApplePay",
+                    "implicit": true,
+                    "spi_group_names": [
+                      "StripeApplePayTokenization"
+                    ],
+                    "accessorKind": "set"
+                  },
+                  {
+                    "kind": "Accessor",
+                    "name": "Modify",
+                    "printedName": "Modify()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV25_allResponseFieldsStorageAA22NonEncodableParametersVSgvM",
+                    "mangledName": "$s10StripeCore0A3APIC0A8ApplePayE5TokenV25_allResponseFieldsStorageAA22NonEncodableParametersVSgvM",
+                    "moduleName": "StripeApplePay",
+                    "implicit": true,
+                    "spi_group_names": [
+                      "StripeApplePayTokenization"
+                    ],
+                    "accessorKind": "_modify"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "id",
+                "printedName": "id",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV2idSSvp",
+                "mangledName": "$s10StripeCore0A3APIC0A8ApplePayE5TokenV2idSSvp",
+                "moduleName": "StripeApplePay",
+                "declAttributes": [
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "spi_group_names": [
+                  "StripeApplePayTokenization"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV2idSSvg",
+                    "mangledName": "$s10StripeCore0A3APIC0A8ApplePayE5TokenV2idSSvg",
+                    "moduleName": "StripeApplePay",
+                    "implicit": true,
+                    "spi_group_names": [
+                      "StripeApplePayTokenization"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(from:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Token",
+                    "printedName": "StripeCore.StripeAPI.Token",
+                    "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Decoder",
+                    "printedName": "Swift.Decoder",
+                    "usr": "s:s7DecoderP"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV4fromAFs7Decoder_p_tKcfc",
+                "mangledName": "$s10StripeCore0A3APIC0A8ApplePayE5TokenV4fromAFs7Decoder_p_tKcfc",
+                "moduleName": "StripeApplePay",
+                "implicit": true,
+                "spi_group_names": [
+                  "StripeApplePayTokenization"
+                ],
+                "throwing": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Function",
+                "name": "create",
+                "printedName": "create(apiClient:payment:completion:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "STPAPIClient",
+                    "printedName": "StripeCore.STPAPIClient",
+                    "hasDefaultArg": true,
+                    "usr": "c:@M@StripeCore@objc(cs)STPAPIClient"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PKPayment",
+                    "printedName": "PassKit.PKPayment",
+                    "usr": "c:objc(cs)PKPayment"
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Result<StripeCore.StripeAPI.Token, Swift.Error>) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Result",
+                        "printedName": "Swift.Result<StripeCore.StripeAPI.Token, Swift.Error>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Token",
+                            "printedName": "StripeCore.StripeAPI.Token",
+                            "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:s6ResultO"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV6create9apiClient7payment10completionyAA12STPAPIClientC_So9PKPaymentCys6ResultOyAFs5Error_pGctFZ",
+                "mangledName": "$s10StripeCore0A3APIC0A8ApplePayE5TokenV6create9apiClient7payment10completionyAA12STPAPIClientC_So9PKPaymentCys6ResultOyAFs5Error_pGctFZ",
+                "moduleName": "StripeApplePay",
+                "static": true,
+                "declAttributes": [
+                  "AccessControl",
+                  "SPIAccessControl",
+                  "RawDocComment"
+                ],
+                "isFromExtension": true,
+                "spi_group_names": [
+                  "StripeApplePayTokenization"
+                ],
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Struct",
+            "usr": "s:10StripeCore0A3APIC0A8ApplePayE5TokenV",
+            "mangledName": "$s10StripeCore0A3APIC0A8ApplePayE5TokenV",
+            "moduleName": "StripeApplePay",
+            "declAttributes": [
+              "AccessControl",
+              "SPIAccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "StripeApplePayTokenization"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "UnknownFieldsDecodable",
+                "printedName": "UnknownFieldsDecodable",
+                "usr": "s:10StripeCore22UnknownFieldsDecodableP",
+                "mangledName": "$s10StripeCore22UnknownFieldsDecodableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Decodable",
+                "printedName": "Decodable",
+                "usr": "s:Se",
+                "mangledName": "$sSe"
+              }
+            ]
           }
         ],
         "declKind": "Class",
@@ -21131,28 +21864,28 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "StringLiteral",
-      "offset": 6339,
-      "length": 15,
-      "value": "\"FORCE_SUCCESS\""
+      "offset": 6681,
+      "length": 36,
+      "value": "\"COMPLETE_WITHOUT_CONFIRMING_INTENT\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "BooleanLiteral",
-      "offset": 11818,
+      "offset": 12265,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "BooleanLiteral",
-      "offset": 11861,
+      "offset": 12308,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 34214,
+      "offset": 34995,
       "length": 1,
       "value": "3"
     },
@@ -21166,77 +21899,77 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35201,
+      "offset": 35982,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35260,
+      "offset": 36041,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35277,
+      "offset": 36058,
       "length": 5,
       "value": "2"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35292,
+      "offset": 36073,
       "length": 7,
       "value": "3"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35260,
+      "offset": 36041,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35277,
+      "offset": 36058,
       "length": 5,
       "value": "2"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35292,
+      "offset": 36073,
       "length": 7,
       "value": "3"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35260,
+      "offset": 36041,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35277,
+      "offset": 36058,
       "length": 5,
       "value": "2"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35292,
+      "offset": 36073,
       "length": 7,
       "value": "3"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/ApplePayContext\/STPApplePayContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 35802,
+      "offset": 36583,
       "length": 1,
       "value": "0"
     },
@@ -21621,42 +22354,42 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/PaymentsCore\/API\/Models\/Token.swift",
       "kind": "StringLiteral",
-      "offset": 1007,
+      "offset": 1238,
       "length": 14,
       "value": "\"bank_account\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/PaymentsCore\/API\/Models\/Token.swift",
       "kind": "StringLiteral",
-      "offset": 1130,
+      "offset": 1361,
       "length": 5,
       "value": "\"pii\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/PaymentsCore\/API\/Models\/Token.swift",
       "kind": "StringLiteral",
-      "offset": 1203,
+      "offset": 1434,
       "length": 12,
       "value": "\"cvc_update\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/PaymentsCore\/API\/Models\/Token.swift",
       "kind": "StringLiteral",
-      "offset": 1007,
+      "offset": 1238,
       "length": 14,
       "value": "\"bank_account\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/PaymentsCore\/API\/Models\/Token.swift",
       "kind": "StringLiteral",
-      "offset": 1130,
+      "offset": 1361,
       "length": 5,
       "value": "\"pii\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/PaymentsCore\/API\/Models\/Token.swift",
       "kind": "StringLiteral",
-      "offset": 1203,
+      "offset": 1434,
       "length": 12,
       "value": "\"cvc_update\""
     },
@@ -21684,7 +22417,7 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeApplePay\/StripeApplePay\/Source\/PaymentsCore\/API\/Token+API.swift",
       "kind": "StringLiteral",
-      "offset": 2059,
+      "offset": 2321,
       "length": 8,
       "value": "\"tokens\""
     }

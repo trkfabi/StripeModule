@@ -27,6 +27,7 @@ import _StringProcessing
   @_spi(STP) case iconClock
   @_spi(STP) case iconInfo
   @_spi(STP) case iconWarning
+  @_spi(STP) case iconWarning2
   @_spi(STP) case iconWarning92
   @_spi(STP) case iconCamera
   @_spi(STP) public init?(rawValue: Swift.String)
@@ -58,10 +59,7 @@ import _StringProcessing
   final public let verificationSessionClientSecret: Swift.String
   @available(iOS 14.3, *)
   convenience public init(verificationSessionClientSecret: Swift.String)
-  @available(iOSApplicationExtension, unavailable)
-  @available(macCatalystApplicationExtension, unavailable)
   convenience public init(verificationSessionId: Swift.String, ephemeralKeySecret: Swift.String, configuration: StripeIdentity.IdentityVerificationSheet.Configuration)
-  @available(iOSApplicationExtension, unavailable)
   final public func present(from presentingViewController: UIKit.UIViewController, completion: @escaping (StripeIdentity.IdentityVerificationSheet.VerificationFlowResult) -> Swift.Void)
   public static var simulatorDocumentCameraImages: [UIKit.UIImage]
   public static var simulatorSelfieCameraImages: [UIKit.UIImage]

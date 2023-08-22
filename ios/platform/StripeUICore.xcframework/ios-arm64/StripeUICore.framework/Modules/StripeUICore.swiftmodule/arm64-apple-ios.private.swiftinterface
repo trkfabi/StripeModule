@@ -240,6 +240,10 @@ import _StringProcessing
   @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public var canBecomeFirstResponder: Swift.Bool {
     @_spi(STP) @objc get
   }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public var isEnabled: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
   @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var keyboardType: UIKit.UIKeyboardType
   @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var textContentType: UIKit.UITextContentType?
   @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var selectedTextRange: UIKit.UITextRange? {
@@ -405,6 +409,7 @@ import _StringProcessing
     @_spi(STP) set
   }
   @_spi(STP) public var didUpdate: StripeUICore.DropdownFieldElement.DidUpdateSelectedIndex?
+  @_spi(STP) final public let label: Swift.String?
   @_spi(STP) public init(items: [StripeUICore.DropdownFieldElement.DropdownItem], defaultIndex: Swift.Int = 0, label: Swift.String?, theme: StripeUICore.ElementsUITheme = .default, disableDropdownWithSingleElement: Swift.Bool = false, didUpdate: StripeUICore.DropdownFieldElement.DidUpdateSelectedIndex? = nil)
   @_spi(STP) public func select(index: Swift.Int)
   @_spi(STP) @objc deinit
@@ -469,6 +474,7 @@ import _StringProcessing
   @_spi(STP) public static let formSpacing: CoreFoundation.CGFloat
   @_spi(STP) public static let defaultCornerRadius: CoreFoundation.CGFloat
   @_spi(STP) public static let backgroundColor: UIKit.UIColor
+  @_spi(STP) public static let disabledBackgroundColor: UIKit.UIColor
   @_spi(STP) public static func makeErrorLabel(theme: StripeUICore.ElementsUITheme = .default) -> UIKit.UILabel
   @_spi(STP) public static func makeNoticeTextField(theme: StripeUICore.ElementsUITheme = .default) -> UIKit.UITextView
   @_spi(STP) public static func makeSectionTitleLabel(theme: StripeUICore.ElementsUITheme = .default) -> UIKit.UILabel
@@ -500,6 +506,7 @@ import _StringProcessing
     @_spi(STP) public var primary: UIKit.UIColor
     @_spi(STP) public var parentBackground: UIKit.UIColor
     @_spi(STP) public var background: UIKit.UIColor
+    @_spi(STP) public var disabledBackground: UIKit.UIColor
     @_spi(STP) public var border: UIKit.UIColor
     @_spi(STP) public var divider: UIKit.UIColor
     @_spi(STP) public var textFieldText: UIKit.UIColor
@@ -526,10 +533,9 @@ import _StringProcessing
     @_spi(STP) @_Concurrency.MainActor(unsafe) public var validationState: StripeUICore.ElementValidationState {
       @_spi(STP) get
     }
-    @_spi(STP) @_Concurrency.MainActor(unsafe) public var didTap: () -> Swift.Void
     @_spi(STP) @_Concurrency.MainActor(unsafe) final public let theme: StripeUICore.ElementsUITheme
     @_spi(STP) @_Concurrency.MainActor(unsafe) public func beginEditing() -> Swift.Bool
-    @_spi(STP) @_Concurrency.MainActor(unsafe) public init(theme: StripeUICore.ElementsUITheme)
+    @_spi(STP) @_Concurrency.MainActor(unsafe) public init(theme: StripeUICore.ElementsUITheme, didTap: @escaping () -> Swift.Void = {})
     @_spi(STP) @objc deinit
   }
 }
@@ -607,9 +613,8 @@ import _StringProcessing
     @_spi(STP) set
   }
   @_spi(STP) final public let countryCodes: [Swift.String]
-  @_spi(STP) public var didTapAutocompleteButton: () -> Swift.Void
   @_spi(STP) public var didUpdate: StripeUICore.AddressSectionElement.DidUpdateAddress?
-  @_spi(STP) public init(title: Swift.String? = nil, countries: [Swift.String]? = nil, locale: Foundation.Locale = .current, addressSpecProvider: StripeUICore.AddressSpecProvider = .shared, defaults: StripeUICore.AddressSectionElement.AddressDetails = .empty, collectionMode: StripeUICore.AddressSectionElement.CollectionMode = .all(), additionalFields: StripeUICore.AddressSectionElement.AdditionalFields = .init(), theme: StripeUICore.ElementsUITheme = .default)
+  @_spi(STP) public init(title: Swift.String? = nil, countries: [Swift.String]? = nil, locale: Foundation.Locale = .current, addressSpecProvider: StripeUICore.AddressSpecProvider = .shared, defaults: StripeUICore.AddressSectionElement.AddressDetails = .empty, collectionMode: StripeUICore.AddressSectionElement.CollectionMode = .all(), additionalFields: StripeUICore.AddressSectionElement.AdditionalFields = .init(), theme: StripeUICore.ElementsUITheme = .default, presentAutoComplete: @escaping () -> Swift.Void = { })
   @_spi(STP) public func updateBillingSameAsShippingDefaultAddress(_ defaultAddress: StripeUICore.AddressSectionElement.AddressDetails.Address)
   @_spi(STP) @objc deinit
 }
@@ -771,6 +776,7 @@ import _StringProcessing
   }
   @_spi(STP) public init(allowedCountryCodes: [Swift.String]? = nil, defaultCountryCode: Swift.String? = nil, defaultPhoneNumber: Swift.String? = nil, isOptional: Swift.Bool = false, locale: Foundation.Locale = .current, theme: StripeUICore.ElementsUITheme = .default)
   @_spi(STP) public func setSelectedCountryCode(_ countryCode: Swift.String, shouldUpdateDefaultNumber: Swift.Bool = false)
+  @_spi(STP) public func clearPhoneNumber()
   @_spi(STP) public func beginEditing() -> Swift.Bool
   @_spi(STP) public func didUpdate(element: StripeUICore.Element)
   @_spi(STP) @objc deinit
@@ -1171,6 +1177,12 @@ public typealias CompatibleColor = UIKit.UIColor
     @_spi(STP) get
   }
   @_spi(STP) public static var cancel: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var closeFormTitle: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var paymentInfoWontBeSaved: Swift.String {
     @_spi(STP) get
   }
   @_spi(STP) public static var ok: Swift.String {

@@ -317,7 +317,7 @@ SWIFT_CLASS_NAMED("STPApplePayContext")
 /// @note This method should only be called once; create a new instance of STPApplePayContext every time you present Apple Pay.
 /// \param completion Called after the Apple Pay sheet is presented
 ///
-- (void)presentApplePayWithCompletion:(void (^ _Nullable)(void))completion SWIFT_AVAILABILITY(maccatalyst_app_extension,unavailable,message="Use `presentApplePay(from:completion:)` in App Extensions.") SWIFT_AVAILABILITY(ios_app_extension,unavailable,message="Use `presentApplePay(from:completion:)` in App Extensions.");
+- (void)presentApplePayWithCompletion:(void (^ _Nullable)(void))completion;
 /// Presents the Apple Pay sheet from the specified window, starting the payment process.
 /// @note This method should only be called once; create a new instance of STPApplePayContext every time you present Apple Pay.
 /// \param window The UIWindow to host the Apple Pay sheet
@@ -734,7 +734,7 @@ SWIFT_CLASS_NAMED("STPApplePayContext")
 /// @note This method should only be called once; create a new instance of STPApplePayContext every time you present Apple Pay.
 /// \param completion Called after the Apple Pay sheet is presented
 ///
-- (void)presentApplePayWithCompletion:(void (^ _Nullable)(void))completion SWIFT_AVAILABILITY(maccatalyst_app_extension,unavailable,message="Use `presentApplePay(from:completion:)` in App Extensions.") SWIFT_AVAILABILITY(ios_app_extension,unavailable,message="Use `presentApplePay(from:completion:)` in App Extensions.");
+- (void)presentApplePayWithCompletion:(void (^ _Nullable)(void))completion;
 /// Presents the Apple Pay sheet from the specified window, starting the payment process.
 /// @note This method should only be called once; create a new instance of STPApplePayContext every time you present Apple Pay.
 /// \param window The UIWindow to host the Apple Pay sheet

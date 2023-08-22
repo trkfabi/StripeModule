@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0592A43629EAE50A00CA279F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0592A43529EAE50A00CA279F /* Media.xcassets */; };
-		0592A45929ED531E00CA279F /* StripeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0592A45529ED531E00CA279F /* StripeCore.xcframework */; };
-		0592A45A29ED531E00CA279F /* StripeCameraCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0592A45629ED531E00CA279F /* StripeCameraCore.xcframework */; };
-		0592A45B29ED531E00CA279F /* StripeIdentity.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0592A45729ED531E00CA279F /* StripeIdentity.xcframework */; };
-		0592A45C29ED531E00CA279F /* StripeUICore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0592A45829ED531E00CA279F /* StripeUICore.xcframework */; };
-		059C47542A1D171D00B512D2 /* StripeApplePay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059C47532A1D171D00B512D2 /* StripeApplePay.xcframework */; };
+		05DD72192A93C65C00CF014C /* StripePaymentSheet.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD720C2A93C65C00CF014C /* StripePaymentSheet.xcframework */; };
+		05DD721A2A93C65C00CF014C /* StripeIdentity.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD720D2A93C65C00CF014C /* StripeIdentity.xcframework */; };
+		05DD721B2A93C65C00CF014C /* StripeCameraCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD720E2A93C65C00CF014C /* StripeCameraCore.xcframework */; };
+		05DD721C2A93C65C00CF014C /* Stripe.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD720F2A93C65C00CF014C /* Stripe.xcframework */; };
+		05DD721D2A93C65C00CF014C /* StripeLinkCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD72102A93C65C00CF014C /* StripeLinkCore.xcframework */; };
+		05DD721E2A93C65C00CF014C /* StripeFinancialConnections.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD72112A93C65C00CF014C /* StripeFinancialConnections.xcframework */; };
+		05DD721F2A93C65C00CF014C /* StripePaymentsUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD72122A93C65C00CF014C /* StripePaymentsUI.xcframework */; };
+		05DD72202A93C65C00CF014C /* StripeCardScan.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD72132A93C65C00CF014C /* StripeCardScan.xcframework */; };
+		05DD72212A93C65C00CF014C /* StripePayments.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD72142A93C65C00CF014C /* StripePayments.xcframework */; };
+		05DD72222A93C65C00CF014C /* Stripe3DS2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD72152A93C65C00CF014C /* Stripe3DS2.xcframework */; };
+		05DD72232A93C65C00CF014C /* StripeApplePay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD72162A93C65C00CF014C /* StripeApplePay.xcframework */; };
+		05DD72242A93C65C00CF014C /* StripeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD72172A93C65C00CF014C /* StripeCore.xcframework */; };
+		05DD72252A93C65C00CF014C /* StripeUICore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD72182A93C65C00CF014C /* StripeUICore.xcframework */; };
 		B1E00E65241D179500C384C1 /* TitaniumKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E00E64241D179500C384C1 /* TitaniumKit.xcframework */; };
 		DB34CDE0207B998A005F8E8C /* ComInzoriStripeModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34CDDE207B998A005F8E8C /* ComInzoriStripeModuleAssets.m */; };
 		DB34CDE1207B998A005F8E8C /* ComInzoriStripeModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34CDDF207B998A005F8E8C /* ComInzoriStripeModuleAssets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,11 +32,19 @@
 
 /* Begin PBXFileReference section */
 		0592A43529EAE50A00CA279F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		0592A45529ED531E00CA279F /* StripeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeCore.xcframework; path = platform/StripeCore.xcframework; sourceTree = "<group>"; };
-		0592A45629ED531E00CA279F /* StripeCameraCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeCameraCore.xcframework; path = platform/StripeCameraCore.xcframework; sourceTree = "<group>"; };
-		0592A45729ED531E00CA279F /* StripeIdentity.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeIdentity.xcframework; path = platform/StripeIdentity.xcframework; sourceTree = "<group>"; };
-		0592A45829ED531E00CA279F /* StripeUICore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeUICore.xcframework; path = platform/StripeUICore.xcframework; sourceTree = "<group>"; };
-		059C47532A1D171D00B512D2 /* StripeApplePay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeApplePay.xcframework; path = platform/StripeApplePay.xcframework; sourceTree = "<group>"; };
+		05DD720C2A93C65C00CF014C /* StripePaymentSheet.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripePaymentSheet.xcframework; path = platform/StripePaymentSheet.xcframework; sourceTree = "<group>"; };
+		05DD720D2A93C65C00CF014C /* StripeIdentity.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeIdentity.xcframework; path = platform/StripeIdentity.xcframework; sourceTree = "<group>"; };
+		05DD720E2A93C65C00CF014C /* StripeCameraCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeCameraCore.xcframework; path = platform/StripeCameraCore.xcframework; sourceTree = "<group>"; };
+		05DD720F2A93C65C00CF014C /* Stripe.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Stripe.xcframework; path = platform/Stripe.xcframework; sourceTree = "<group>"; };
+		05DD72102A93C65C00CF014C /* StripeLinkCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeLinkCore.xcframework; path = platform/StripeLinkCore.xcframework; sourceTree = "<group>"; };
+		05DD72112A93C65C00CF014C /* StripeFinancialConnections.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeFinancialConnections.xcframework; path = platform/StripeFinancialConnections.xcframework; sourceTree = "<group>"; };
+		05DD72122A93C65C00CF014C /* StripePaymentsUI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripePaymentsUI.xcframework; path = platform/StripePaymentsUI.xcframework; sourceTree = "<group>"; };
+		05DD72132A93C65C00CF014C /* StripeCardScan.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeCardScan.xcframework; path = platform/StripeCardScan.xcframework; sourceTree = "<group>"; };
+		05DD72142A93C65C00CF014C /* StripePayments.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripePayments.xcframework; path = platform/StripePayments.xcframework; sourceTree = "<group>"; };
+		05DD72152A93C65C00CF014C /* Stripe3DS2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Stripe3DS2.xcframework; path = platform/Stripe3DS2.xcframework; sourceTree = "<group>"; };
+		05DD72162A93C65C00CF014C /* StripeApplePay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeApplePay.xcframework; path = platform/StripeApplePay.xcframework; sourceTree = "<group>"; };
+		05DD72172A93C65C00CF014C /* StripeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeCore.xcframework; path = platform/StripeCore.xcframework; sourceTree = "<group>"; };
+		05DD72182A93C65C00CF014C /* StripeUICore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StripeUICore.xcframework; path = platform/StripeUICore.xcframework; sourceTree = "<group>"; };
 		B1E00E64241D179500C384C1 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TitaniumKit.xcframework; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<group>"; };
 		DB34CDDE207B998A005F8E8C /* ComInzoriStripeModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComInzoriStripeModuleAssets.m; path = Classes/ComInzoriStripeModuleAssets.m; sourceTree = SOURCE_ROOT; };
 		DB34CDDF207B998A005F8E8C /* ComInzoriStripeModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComInzoriStripeModuleAssets.h; path = Classes/ComInzoriStripeModuleAssets.h; sourceTree = SOURCE_ROOT; };
@@ -46,13 +62,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0592A45B29ED531E00CA279F /* StripeIdentity.xcframework in Frameworks */,
-				0592A45A29ED531E00CA279F /* StripeCameraCore.xcframework in Frameworks */,
 				DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */,
-				059C47542A1D171D00B512D2 /* StripeApplePay.xcframework in Frameworks */,
-				0592A45929ED531E00CA279F /* StripeCore.xcframework in Frameworks */,
+				05DD721D2A93C65C00CF014C /* StripeLinkCore.xcframework in Frameworks */,
+				05DD72212A93C65C00CF014C /* StripePayments.xcframework in Frameworks */,
+				05DD721F2A93C65C00CF014C /* StripePaymentsUI.xcframework in Frameworks */,
+				05DD72222A93C65C00CF014C /* Stripe3DS2.xcframework in Frameworks */,
+				05DD72192A93C65C00CF014C /* StripePaymentSheet.xcframework in Frameworks */,
+				05DD721A2A93C65C00CF014C /* StripeIdentity.xcframework in Frameworks */,
+				05DD721E2A93C65C00CF014C /* StripeFinancialConnections.xcframework in Frameworks */,
 				B1E00E65241D179500C384C1 /* TitaniumKit.xcframework in Frameworks */,
-				0592A45C29ED531E00CA279F /* StripeUICore.xcframework in Frameworks */,
+				05DD72242A93C65C00CF014C /* StripeCore.xcframework in Frameworks */,
+				05DD721C2A93C65C00CF014C /* Stripe.xcframework in Frameworks */,
+				05DD721B2A93C65C00CF014C /* StripeCameraCore.xcframework in Frameworks */,
+				05DD72202A93C65C00CF014C /* StripeCardScan.xcframework in Frameworks */,
+				05DD72232A93C65C00CF014C /* StripeApplePay.xcframework in Frameworks */,
+				05DD72252A93C65C00CF014C /* StripeUICore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,11 +107,19 @@
 		DB34CDE2207B9D6A005F8E8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				059C47532A1D171D00B512D2 /* StripeApplePay.xcframework */,
-				0592A45629ED531E00CA279F /* StripeCameraCore.xcframework */,
-				0592A45529ED531E00CA279F /* StripeCore.xcframework */,
-				0592A45729ED531E00CA279F /* StripeIdentity.xcframework */,
-				0592A45829ED531E00CA279F /* StripeUICore.xcframework */,
+				05DD720F2A93C65C00CF014C /* Stripe.xcframework */,
+				05DD72152A93C65C00CF014C /* Stripe3DS2.xcframework */,
+				05DD72162A93C65C00CF014C /* StripeApplePay.xcframework */,
+				05DD720E2A93C65C00CF014C /* StripeCameraCore.xcframework */,
+				05DD72132A93C65C00CF014C /* StripeCardScan.xcframework */,
+				05DD72172A93C65C00CF014C /* StripeCore.xcframework */,
+				05DD72112A93C65C00CF014C /* StripeFinancialConnections.xcframework */,
+				05DD720D2A93C65C00CF014C /* StripeIdentity.xcframework */,
+				05DD72102A93C65C00CF014C /* StripeLinkCore.xcframework */,
+				05DD72142A93C65C00CF014C /* StripePayments.xcframework */,
+				05DD720C2A93C65C00CF014C /* StripePaymentSheet.xcframework */,
+				05DD72122A93C65C00CF014C /* StripePaymentsUI.xcframework */,
+				05DD72182A93C65C00CF014C /* StripeUICore.xcframework */,
 				B1E00E64241D179500C384C1 /* TitaniumKit.xcframework */,
 				DB34CDE5207B9EBD005F8E8C /* Foundation.framework */,
 			);

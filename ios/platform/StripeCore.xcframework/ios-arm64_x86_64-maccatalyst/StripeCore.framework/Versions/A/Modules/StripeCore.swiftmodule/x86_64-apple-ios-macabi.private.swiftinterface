@@ -4,10 +4,12 @@
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import CoreGraphics
+import CoreTelephony
 import Foundation
 import PassKit
 @_exported import StripeCore
 import Swift
+import SystemConfiguration
 import UIKit
 import _Concurrency
 import _StringProcessing
@@ -293,22 +295,42 @@ extension StripeCore.STPAPIClient {
   @_spi(STP) case linkSignupStart
   @_spi(STP) case linkSignupComplete
   @_spi(STP) case linkSignupFailure
-  @_spi(STP) case link2FAStart
-  @_spi(STP) case link2FAStartFailure
-  @_spi(STP) case link2FAComplete
-  @_spi(STP) case link2FACancel
-  @_spi(STP) case link2FAFailure
+  @_spi(STP) case linkPopupShow
+  @_spi(STP) case linkPopupSuccess
+  @_spi(STP) case linkPopupCancel
+  @_spi(STP) case linkPopupSkipped
+  @_spi(STP) case linkPopupError
+  @_spi(STP) case linkPopupLogout
   @_spi(STP) case linkAccountLookupFailure
   @_spi(STP) case luxeSerializeFailure
   @_spi(STP) case luxeImageSelectorIconDownloaded
   @_spi(STP) case luxeImageSelectorIconFromBundle
   @_spi(STP) case luxeImageSelectorIconNotFound
+  @_spi(STP) case cs_add_payment_method_screen_presented
+  @_spi(STP) case cs_select_payment_method_screen_presented
+  @_spi(STP) case cs_select_payment_method_screen_confirmed_savedpm_success
+  @_spi(STP) case cs_select_payment_method_screen_confirmed_savedpm_failure
+  @_spi(STP) case cs_select_payment_method_screen_edit_tapped
+  @_spi(STP) case cs_select_payment_method_screen_done_tapped
+  @_spi(STP) case cs_select_payment_method_screen_removepm_success
+  @_spi(STP) case cs_select_payment_method_screen_removepm_failure
+  @_spi(STP) case cs_add_payment_method_via_setupintent_success
+  @_spi(STP) case cs_add_payment_method_via_setupintent_canceled
+  @_spi(STP) case cs_add_payment_method_via_setupintent_failure
+  @_spi(STP) case cs_add_payment_method_via_createAttach_success
+  @_spi(STP) case cs_add_payment_method_via_createAttach_failure
   @_spi(STP) case addressShow
   @_spi(STP) case addressCompleted
   @_spi(STP) case paymentMethodMessagingViewLoadSucceeded
   @_spi(STP) case paymentMethodMessagingViewLoadFailed
   @_spi(STP) case paymentMethodMessagingViewTapped
   @_spi(STP) case paymentSheetForceSuccess
+  @_spi(STP) case paymentSheetLoadStarted
+  @_spi(STP) case paymentSheetLoadSucceeded
+  @_spi(STP) case paymentSheetLoadFailed
+  @_spi(STP) case paymentSheetDismissed
+  @_spi(STP) case paymentSheetCarouselPaymentMethodTapped
+  @_spi(STP) case paymentSheetConfirmButtonTapped
   @_spi(STP) public init?(rawValue: Swift.String)
   @_spi(STP) public typealias RawValue = Swift.String
   @_spi(STP) public var rawValue: Swift.String {

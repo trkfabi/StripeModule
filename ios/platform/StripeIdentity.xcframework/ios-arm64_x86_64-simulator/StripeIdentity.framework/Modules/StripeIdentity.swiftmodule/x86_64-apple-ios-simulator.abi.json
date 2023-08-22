@@ -354,6 +354,26 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "StripeIdentity",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "StripeCore",
+        "printedName": "StripeCore",
+        "declKind": "Import",
+        "moduleName": "StripeIdentity",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "CoreGraphics",
         "printedName": "CoreGraphics",
         "declKind": "Import",
@@ -368,6 +388,26 @@
         "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "StripeIdentity"
+      },
+      {
+        "kind": "Import",
+        "name": "StripeCore",
+        "printedName": "StripeCore",
+        "declKind": "Import",
+        "moduleName": "StripeIdentity",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "StripeIdentity",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -1230,6 +1270,46 @@
             "declKind": "EnumElement",
             "usr": "s:14StripeIdentity5ImageO11iconWarningyA2CmF",
             "mangledName": "$s14StripeIdentity5ImageO11iconWarningyA2CmF",
+            "moduleName": "StripeIdentity",
+            "spi_group_names": [
+              "STP"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "iconWarning2",
+            "printedName": "iconWarning2",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StripeIdentity.Image.Type) -> StripeIdentity.Image",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Image",
+                    "printedName": "StripeIdentity.Image",
+                    "usr": "s:14StripeIdentity5ImageO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StripeIdentity.Image.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Image",
+                        "printedName": "StripeIdentity.Image",
+                        "usr": "s:14StripeIdentity5ImageO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14StripeIdentity5ImageO12iconWarning2yA2CmF",
+            "mangledName": "$s14StripeIdentity5ImageO12iconWarning2yA2CmF",
             "moduleName": "StripeIdentity",
             "spi_group_names": [
               "STP"
@@ -2268,8 +2348,6 @@
             "declAttributes": [
               "Convenience",
               "AccessControl",
-              "Available",
-              "Available",
               "RawDocComment"
             ],
             "init_kind": "Convenience"
@@ -2316,7 +2394,6 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "Available",
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
@@ -4553,6 +4630,24 @@
       },
       {
         "kind": "Import",
+        "name": "StripeUICore",
+        "printedName": "StripeUICore",
+        "declKind": "Import",
+        "moduleName": "StripeIdentity",
+        "declAttributes": [
+          "SPIAccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "StripeIdentity"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -5102,6 +5197,24 @@
         "moduleName": "StripeIdentity",
         "declAttributes": [
           "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "StripeIdentity"
+      },
+      {
+        "kind": "Import",
+        "name": "StripeUICore",
+        "printedName": "StripeUICore",
+        "declKind": "Import",
+        "moduleName": "StripeIdentity",
+        "declAttributes": [
+          "SPIAccessControl",
+          "RawDocComment"
         ]
       },
       {
@@ -6154,9 +6267,9 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/API Bindings\/IdentityAPIClient.swift",
       "kind": "IntegerLiteral",
-      "offset": 1407,
+      "offset": 1555,
       "length": 1,
-      "value": "3"
+      "value": "4"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/API Bindings\/Models\/DocumentType.swift",
@@ -6315,6 +6428,20 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/API Bindings\/Models\/VerificationPage\/VerificationPageFieldType.swift",
       "kind": "StringLiteral",
+      "offset": 657,
+      "length": 14,
+      "value": "\"phone_number\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/API Bindings\/Models\/VerificationPage\/VerificationPageFieldType.swift",
+      "kind": "StringLiteral",
+      "offset": 696,
+      "length": 11,
+      "value": "\"phone_otp\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/API Bindings\/Models\/VerificationPage\/VerificationPageFieldType.swift",
+      "kind": "StringLiteral",
       "offset": 313,
       "length": 19,
       "value": "\"biometric_consent\""
@@ -6376,6 +6503,20 @@
       "value": "\"address\""
     },
     {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/API Bindings\/Models\/VerificationPage\/VerificationPageFieldType.swift",
+      "kind": "StringLiteral",
+      "offset": 657,
+      "length": 14,
+      "value": "\"phone_number\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/API Bindings\/Models\/VerificationPage\/VerificationPageFieldType.swift",
+      "kind": "StringLiteral",
+      "offset": 696,
+      "length": 11,
+      "value": "\"phone_otp\""
+    },
+    {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/API Bindings\/Models\/VerificationPageDataUpdate\/VerificationPageDataDocumentFileData.swift",
       "kind": "StringLiteral",
       "offset": 493,
@@ -6693,28 +6834,35 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 2697,
+      "offset": 2687,
+      "length": 11,
+      "value": "\"phone_otp\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
+      "kind": "StringLiteral",
+      "offset": 2733,
       "length": 20,
       "value": "\"individual_welcome\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 2739,
+      "offset": 2775,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 2779,
+      "offset": 2815,
       "length": 20,
       "value": "\"country_not_listed\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 2821,
+      "offset": 2857,
       "length": 7,
       "value": "\"debug\""
     },
@@ -6770,63 +6918,70 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 2697,
+      "offset": 2687,
+      "length": 11,
+      "value": "\"phone_otp\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
+      "kind": "StringLiteral",
+      "offset": 2733,
       "length": 20,
       "value": "\"individual_welcome\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 2739,
+      "offset": 2775,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 2779,
+      "offset": 2815,
       "length": 20,
       "value": "\"country_not_listed\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 2821,
+      "offset": 2857,
       "length": 7,
       "value": "\"debug\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 3058,
+      "offset": 3094,
       "length": 21,
       "value": "\"mobile-identity-sdk\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "StringLiteral",
-      "offset": 3097,
+      "offset": 3133,
       "length": 21,
       "value": "\"stripe-identity-ios\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "IntegerLiteral",
-      "offset": 3353,
+      "offset": 3389,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "IntegerLiteral",
-      "offset": 3491,
+      "offset": 3527,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Analytics\/IdentityAnalyticsClient.swift",
       "kind": "IntegerLiteral",
-      "offset": 3607,
+      "offset": 3643,
       "length": 1,
       "value": "0"
     },
@@ -6875,7 +7030,7 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Elements\/IdentityElementsFactory.swift",
       "kind": "StringLiteral",
-      "offset": 4193,
+      "offset": 4538,
       "length": 16,
       "value": "\"MM \/ DD \/ YYYY\""
     },
@@ -6924,14 +7079,21 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Helpers\/Image.swift",
       "kind": "StringLiteral",
-      "offset": 742,
+      "offset": 741,
+      "length": 15,
+      "value": "\"icon_warning2\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Helpers\/Image.swift",
+      "kind": "StringLiteral",
+      "offset": 782,
       "length": 17,
       "value": "\"icon_warning_92\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Helpers\/Image.swift",
       "kind": "StringLiteral",
-      "offset": 782,
+      "offset": 822,
       "length": 13,
       "value": "\"icon_camera\""
     },
@@ -6980,14 +7142,21 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Helpers\/Image.swift",
       "kind": "StringLiteral",
-      "offset": 742,
+      "offset": 741,
+      "length": 15,
+      "value": "\"icon_warning2\""
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Helpers\/Image.swift",
+      "kind": "StringLiteral",
+      "offset": 782,
       "length": 17,
       "value": "\"icon_warning_92\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/Helpers\/Image.swift",
       "kind": "StringLiteral",
-      "offset": 782,
+      "offset": 822,
       "length": 13,
       "value": "\"icon_camera\""
     },
@@ -7001,21 +7170,21 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/IdentityVerificationSheet.swift",
       "kind": "Array",
-      "offset": 10014,
+      "offset": 9847,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/IdentityVerificationSheet.swift",
       "kind": "Array",
-      "offset": 10189,
+      "offset": 10022,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/IdentityVerificationSheet.swift",
       "kind": "StringLiteral",
-      "offset": 11685,
+      "offset": 11469,
       "length": 27,
       "value": "\"IdentityVerificationSheet\""
     },
@@ -7050,7 +7219,7 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Coordinators\/ImageScanningSession\/ImageScanningSession.swift",
       "kind": "StringLiteral",
-      "offset": 679,
+      "offset": 630,
       "length": 20,
       "value": "\"StripeIdentity.ImageScanningSession\""
     },
@@ -7064,21 +7233,21 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Coordinators\/VerificationSheetController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4117,
+      "offset": 4915,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Coordinators\/VerificationSheetFlowController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2318,
+      "offset": 2212,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Coordinators\/VerificationSheetFlowController.swift",
       "kind": "StringLiteral",
-      "offset": 2142,
+      "offset": 2036,
       "length": 31,
       "value": "\"StripeIdentity.VerificationSheetFlowController\""
     },
@@ -7400,91 +7569,91 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/BiometricConsentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 588,
+      "offset": 539,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/BiometricConsentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 680,
+      "offset": 631,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/BiometricConsentViewController.swift",
       "kind": "StringLiteral",
-      "offset": 302,
+      "offset": 253,
       "length": 30,
       "value": "\"StripeIdentity.BiometricConsentViewController\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/CountryNotListedViewController.swift",
       "kind": "StringLiteral",
-      "offset": 240,
+      "offset": 191,
       "length": 30,
       "value": "\"StripeIdentity.CountryNotListedViewController\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/DebugViewController.swift",
       "kind": "StringLiteral",
-      "offset": 219,
+      "offset": 170,
       "length": 19,
       "value": "\"StripeIdentity.DebugViewController\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/DocumentCaptureViewController.swift",
       "kind": "StringLiteral",
-      "offset": 348,
+      "offset": 299,
       "length": 29,
       "value": "\"StripeIdentity.DocumentCaptureViewController\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/DocumentFileUploadViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1406,
+      "offset": 1357,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/DocumentFileUploadViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1504,
+      "offset": 1455,
       "length": 44,
       "value": "\"com.stripe.identity.document-image-loading\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/DocumentFileUploadViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1947,
+      "offset": 1898,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/DocumentFileUploadViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2062,
+      "offset": 2013,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/DocumentFileUploadViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2171,
+      "offset": 2122,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/DocumentFileUploadViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2281,
+      "offset": 2232,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/DocumentFileUploadViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1241,
+      "offset": 1192,
       "length": 32,
       "value": "\"StripeIdentity.DocumentFileUploadViewController\""
     },
@@ -7519,21 +7688,21 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/IndividualViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 540,
+      "offset": 491,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/IndividualViewController.swift",
       "kind": "StringLiteral",
-      "offset": 266,
+      "offset": 217,
       "length": 24,
       "value": "\"StripeIdentity.IndividualViewController\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/IndividualWelcomeViewController.swift",
       "kind": "StringLiteral",
-      "offset": 242,
+      "offset": 193,
       "length": 31,
       "value": "\"StripeIdentity.IndividualWelcomeViewController\""
     },
@@ -7587,23 +7756,30 @@
       "value": "\"StripeIdentity.LoadingViewController\""
     },
     {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/PhoneOtpViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 149,
+      "length": 22,
+      "value": "\"StripeIdentity.PhoneOtpViewController\""
+    },
+    {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/SelfieCaptureViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6455,
+      "offset": 6406,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/SelfieCaptureViewController.swift",
       "kind": "StringLiteral",
-      "offset": 346,
+      "offset": 297,
       "length": 27,
       "value": "\"StripeIdentity.SelfieCaptureViewController\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/ViewControllers\/SuccessViewController.swift",
       "kind": "StringLiteral",
-      "offset": 293,
+      "offset": 244,
       "length": 21,
       "value": "\"StripeIdentity.SuccessViewController\""
     },
@@ -7932,133 +8108,133 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "IntegerLiteral",
-      "offset": 725,
+      "offset": 627,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "IntegerLiteral",
-      "offset": 780,
+      "offset": 682,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 394,
+      "offset": 296,
       "length": 9,
       "value": "\"StripeIdentity.DebugView\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 11597,
+      "offset": 11254,
       "length": 30,
       "value": "\"You're currently in testmode\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 11670,
+      "offset": 11327,
       "length": 38,
       "value": "\"This page is only shown in testmode.\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 11752,
+      "offset": 11409,
       "length": 27,
       "value": "\"Terminate mobile SDK flow\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 11830,
+      "offset": 11487,
       "length": 124,
       "value": "\"Terminate mobile SDK flow locally with Completed, Cancelled or Failed without changing the verification session on server.\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12003,
+      "offset": 11660,
       "length": 25,
       "value": "\"Preview user experience\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12084,
+      "offset": 11741,
       "length": 79,
       "value": "\"Proceed to preview as an end user. Information provided will not be verified.\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12211,
+      "offset": 11868,
       "length": 25,
       "value": "\"Complete with test data\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12291,
+      "offset": 11948,
       "length": 138,
       "value": "\"Save time by choosing a desired result and completing instantly with that outcome. The mobile SDK flow will return with result Completed\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12476,
+      "offset": 12133,
       "length": 22,
       "value": "\"Verification success\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12545,
+      "offset": 12202,
       "length": 22,
       "value": "\"Verification failure\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12619,
+      "offset": 12276,
       "length": 28,
       "value": "\"Verification success async\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12699,
+      "offset": 12356,
       "length": 28,
       "value": "\"Verification failure async\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12761,
+      "offset": 12418,
       "length": 8,
       "value": "\"Submit\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12804,
+      "offset": 12461,
       "length": 9,
       "value": "\"Proceed\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12850,
+      "offset": 12507,
       "length": 11,
       "value": "\"Cancelled\""
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/DebugView.swift",
       "kind": "StringLiteral",
-      "offset": 12895,
+      "offset": 12552,
       "length": 8,
       "value": "\"Failed\""
     },
@@ -8520,21 +8696,21 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/IdentityFlowView.swift",
       "kind": "Array",
-      "offset": 3319,
+      "offset": 3317,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/IdentityFlowView.swift",
       "kind": "Array",
-      "offset": 3371,
+      "offset": 3369,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/IdentityFlowView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3431,
+      "offset": 3429,
       "length": 1,
       "value": "0"
     },
@@ -8840,6 +9016,41 @@
       "value": "\"StripeIdentity.ListView\""
     },
     {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/PhoneOtpView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 901,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/PhoneOtpView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1150,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/PhoneOtpView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1394,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/PhoneOtpView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1671,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/PhoneOtpView.swift",
+      "kind": "StringLiteral",
+      "offset": 256,
+      "length": 12,
+      "value": "\"StripeIdentity.PhoneOtpView\""
+    },
+    {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/NativeComponents\/Views\/Selfie\/SelfieCaptureView.swift",
       "kind": "StringLiteral",
       "offset": 288,
@@ -9059,7 +9270,7 @@
     {
       "filePath": "\/Users\/davidestes\/stripe\/stripe-ios\/StripeIdentity\/StripeIdentity\/Source\/WebWrapper\/VerificationFlowWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1609,
+      "offset": 1511,
       "length": 33,
       "value": "\"StripeIdentity.VerificationFlowWebViewController\""
     },
