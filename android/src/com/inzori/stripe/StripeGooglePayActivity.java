@@ -62,49 +62,58 @@ public class StripeGooglePayActivity extends ComponentActivity
 
     }
     private void onGooglePayReady(Boolean isReady) {
-        //Log.w(LCAT, "GooglePayActivity onGooglePayReady isReady: " + isReady );
+        Log.w(LCAT, "GooglePayActivity onGooglePayReady isReady: " + isReady );
         // fire event
-        Intent eventIntent = new Intent();
-        eventIntent.setAction("stripe:onGooglePay");
-        eventIntent.putExtra("event", "onReady");
-        eventIntent.putExtra("cancelled", false);
-        eventIntent.putExtra("message", "On Google Pay ready");
-        eventIntent.putExtra("success", isReady);
-        LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).sendBroadcast(eventIntent);
-
-        googlePayLauncher.presentForPaymentIntent(clientSecret);
+//        Intent eventIntent = new Intent();
+//        eventIntent.setAction("stripe:onGooglePay");
+//        eventIntent.putExtra("event", "onReady");
+//        eventIntent.putExtra("cancelled", false);
+//        eventIntent.putExtra("message", "On Google Pay ready");
+//        eventIntent.putExtra("success", isReady);
+//        LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).sendBroadcast(eventIntent);
+        if( isReady) {
+            googlePayLauncher.presentForPaymentIntent(clientSecret);
+        } else {
+            Intent eventIntent = new Intent();
+            eventIntent.putExtra("success", false);
+            eventIntent.putExtra("cancel", false);
+            eventIntent.putExtra("error", "GPay is not available");
+            setResult(RESULT_CANCELED, eventIntent);
+        }
     }
 
     private void onGooglePayResult(GooglePayLauncher.Result result) {
         Log.w(LCAT, "GooglePayActivity onGooglePayResult result: " + result );
 
         Intent eventIntent = new Intent();
-        eventIntent.setAction("stripe:onGooglePay");
+        //eventIntent.setAction("stripe:onGooglePay");
 
         if (result instanceof GooglePayLauncher.Result.Completed) {
             // Payment succeeded, show a receipt view
             eventIntent.putExtra("success", true);
-            eventIntent.putExtra("event", "didCompleteWith");
+            //eventIntent.putExtra("event", "didCompleteWith");
             eventIntent.putExtra("cancel", false);
-            eventIntent.putExtra("message", "Payment succeeded");
+            //eventIntent.putExtra("message", "Payment succeeded");
+            eventIntent.putExtra("error", "");
             setResult(RESULT_OK, eventIntent);
         } else if (result instanceof GooglePayLauncher.Result.Canceled) {
             // User canceled the operation
-            eventIntent.putExtra("success", true);
-            eventIntent.putExtra("event", "didCompleteWith");
+            eventIntent.putExtra("success", false);
+            //eventIntent.putExtra("event", "didCompleteWith");
             eventIntent.putExtra("cancel", true);
-            eventIntent.putExtra("message", "User cancelled payment");
+            //eventIntent.putExtra("message", "User cancelled payment");
+            eventIntent.putExtra("error", "");
             setResult(RESULT_CANCELED, eventIntent);
         } else if (result instanceof GooglePayLauncher.Result.Failed) {
             // Operation failed; inspect `result.getError()` for more details
             eventIntent.putExtra("success", false);
-            eventIntent.putExtra("event", "didCompleteWith");
+            //eventIntent.putExtra("event", "didCompleteWith");
             eventIntent.putExtra("cancel", false);
-            eventIntent.putExtra("message", ((GooglePayLauncher.Result.Failed) result).getError());
+            //eventIntent.putExtra("message", ((GooglePayLauncher.Result.Failed) result).getError());
             eventIntent.putExtra("error", ((GooglePayLauncher.Result.Failed) result).getError());
             setResult(RESULT_CANCELED, eventIntent);
         }
-        LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).sendBroadcast(eventIntent);
+        //LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).sendBroadcast(eventIntent);
         finish();
 
     }
