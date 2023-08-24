@@ -4,26 +4,25 @@ package com.inzori.stripe;
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
-import org.appcelerator.titanium.view.TiCompositeLayout;
-
+import android.view.Window;
+import android.view.WindowManager;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.activity.ComponentActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.stripe.android.PaymentConfiguration;
 import com.stripe.android.googlepaylauncher.GooglePayEnvironment;
 import com.stripe.android.googlepaylauncher.GooglePayLauncher;
 
-public class StripeGooglePayActivity extends AppCompatActivity
+public class StripeGooglePayActivity extends ComponentActivity
 {
     private static final String LCAT = "StripeGooglePayActivity";
+    private GooglePayLauncher googlePayLauncher;
+    private String clientSecret;
 
-    protected TiCompositeLayout layout = null;
-    
     public StripeGooglePayActivity()
     {
         super();
@@ -33,27 +32,24 @@ public class StripeGooglePayActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        layout = new TiCompositeLayout(this);
-        setContentView(layout);
 
-        Log.w(LCAT, "GooglePayActivitiy onCreate " );
+        //Log.w(LCAT, "GooglePayActivity onCreate " );
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setTitle("");
 
         Intent intent = getIntent();
         Integer amount = intent.getIntExtra("amount", 0);
         String currency = intent.getStringExtra("currency");
         String country = intent.getStringExtra("country");
         String companyName = intent.getStringExtra("companyName");
-        String clientSecret = intent.getStringExtra("clientSecret");
+        clientSecret = intent.getStringExtra("clientSecret");
         String pk = intent.getStringExtra("pk");
         Boolean isSandbox = intent.getBooleanExtra("isSandbox", true);
 
-        Log.w(LCAT, "GooglePayActivitiy onCreate pk: "+pk );
-
         PaymentConfiguration.init(this, pk);
 
-        Log.w(LCAT, "GooglePayActivitiy onCreate googlePayLauncher" );
-
-        final GooglePayLauncher googlePayLauncher = new GooglePayLauncher(
+        googlePayLauncher = new GooglePayLauncher(
                 this,
                 new GooglePayLauncher.Config(
                         isSandbox? GooglePayEnvironment.Test: GooglePayEnvironment.Production,
@@ -64,15 +60,10 @@ public class StripeGooglePayActivity extends AppCompatActivity
                 this::onGooglePayResult
         );
 
-        Log.w(LCAT, "GooglePayActivitiy onCreate googlePayLauncher present" );
-        googlePayLauncher.presentForPaymentIntent(clientSecret);
-
-        Log.w(LCAT, "GooglePayActivitiy onCreate end" );
-
     }
     private void onGooglePayReady(Boolean isReady) {
-        Log.w(LCAT, "GooglePayActivitiy onGooglePayReady isReady: " + isReady );
-        // implemented below
+        //Log.w(LCAT, "GooglePayActivity onGooglePayReady isReady: " + isReady );
+        // fire event
         Intent eventIntent = new Intent();
         eventIntent.setAction("stripe:onGooglePay");
         eventIntent.putExtra("event", "onReady");
@@ -80,11 +71,12 @@ public class StripeGooglePayActivity extends AppCompatActivity
         eventIntent.putExtra("message", "On Google Pay ready");
         eventIntent.putExtra("success", isReady);
         LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).sendBroadcast(eventIntent);
-        
+
+        googlePayLauncher.presentForPaymentIntent(clientSecret);
     }
 
     private void onGooglePayResult(GooglePayLauncher.Result result) {
-        Log.w(LCAT, "GooglePayActivitiy onGooglePayResult result: " + result );
+        Log.w(LCAT, "GooglePayActivity onGooglePayResult result: " + result );
 
         Intent eventIntent = new Intent();
         eventIntent.setAction("stripe:onGooglePay");
@@ -93,23 +85,28 @@ public class StripeGooglePayActivity extends AppCompatActivity
             // Payment succeeded, show a receipt view
             eventIntent.putExtra("success", true);
             eventIntent.putExtra("event", "didCompleteWith");
-            eventIntent.putExtra("cancelled", false);
-            eventIntent.putExtra("message", "Payment succeded");
+            eventIntent.putExtra("cancel", false);
+            eventIntent.putExtra("message", "Payment succeeded");
+            setResult(RESULT_OK, eventIntent);
         } else if (result instanceof GooglePayLauncher.Result.Canceled) {
             // User canceled the operation
             eventIntent.putExtra("success", true);
             eventIntent.putExtra("event", "didCompleteWith");
-            eventIntent.putExtra("cancelled", true);
+            eventIntent.putExtra("cancel", true);
             eventIntent.putExtra("message", "User cancelled payment");
+            setResult(RESULT_CANCELED, eventIntent);
         } else if (result instanceof GooglePayLauncher.Result.Failed) {
             // Operation failed; inspect `result.getError()` for more details
             eventIntent.putExtra("success", false);
             eventIntent.putExtra("event", "didCompleteWith");
-            eventIntent.putExtra("cancelled", false);
+            eventIntent.putExtra("cancel", false);
             eventIntent.putExtra("message", ((GooglePayLauncher.Result.Failed) result).getError());
+            eventIntent.putExtra("error", ((GooglePayLauncher.Result.Failed) result).getError());
+            setResult(RESULT_CANCELED, eventIntent);
         }
         LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).sendBroadcast(eventIntent);
         finish();
+
     }
 
     @Override

@@ -107,8 +107,8 @@ class ComInzoriStripeModule: TiModule {
     }
     
     // This is just for apple pay
-    @objc(showApplePaySheet:)
-    func showApplePaySheet(arguments: Array<Any>?) {
+    @objc(showWalletSheet:)
+    func showWalletSheet(arguments: Array<Any>?) {
         guard let arguments = arguments, let options = arguments[0] as? [String: Any] else { return }
         
         let merchantIdentifier = options["merchantId"] as? String ?? "merchant.com.fluidtruck"
@@ -144,8 +144,6 @@ class ComInzoriStripeModule: TiModule {
         }
         
         let callback = params["onComplete"] as? KrollCallback
-        //let merchantIdentifier = params["merchantIdentifier"] as? String
-        //let merchantCountryCode = params["merchantCountryCode"] as? String
         let merchantDisplayName = params["merchantDisplayName"] as? String
         let customerId = params["customerId"] as? String
         let customerEphemeralKeySecret = params["customerEphemeralKeySecret"] as? String
@@ -158,13 +156,6 @@ class ComInzoriStripeModule: TiModule {
         }
         
         var configuration = PaymentSheet.Configuration()
-        // this is supposed to enable apple pay too in the sheet ?
-//        if let merchantIdentifier {
-//            configuration.applePay = .init(
-//                merchantId: merchantIdentifier,
-//                merchantCountryCode: merchantCountryCode!
-//            )
-//        }
         
         if let appearance {
           configuration.appearance = mappedAppearance(appearance);

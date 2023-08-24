@@ -13,18 +13,14 @@ import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.titanium.TiApplication;
+import org.appcelerator.titanium.util.TiActivityResultHandler;
+import org.appcelerator.titanium.util.TiActivitySupport;
 import org.appcelerator.kroll.common.Log;
-import org.appcelerator.titanium.TiC;
-import org.appcelerator.titanium.util.TiConvert;
-import org.appcelerator.titanium.util.TiUrl;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
-import android.net.Uri;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
@@ -34,8 +30,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
+import android.os.Build;
+import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
+import androidx.activity.ComponentActivity;
+import android.app.Activity;
+import com.stripe.android.paymentsheet.PaymentSheet;
+import com.stripe.android.paymentsheet.PaymentSheetResult;
+import com.stripe.android.PaymentConfiguration;
+
 @Kroll.module(name="Stripe", id="com.inzori.stripe")
-public class StripeModule extends KrollModule
+public class StripeModule extends KrollModule implements TiActivityResultHandler
 {
 
 	// Standard Debugging variables
@@ -44,6 +50,7 @@ public class StripeModule extends KrollModule
 	private String verificationSessionId = "";
 	private static IdentityVerificationSheet identityVerificationSheet;
 	StripeModule self;
+	private KrollFunction callback;
 
 	// You can define constants with @Kroll.constant, for example:
 	// @Kroll.constant public static final String EXTERNAL_NAME = value;
@@ -60,7 +67,7 @@ public class StripeModule extends KrollModule
 		// put module init code that needs to run when the application is created
 	}
 
-	// Methods
+	// Methods for ID verification
 	@Kroll.method
 	public void startVerification(KrollDict options)
 	{
@@ -106,15 +113,90 @@ public class StripeModule extends KrollModule
 		}
 	};
 
-	// Methods
+	// Methods for PAYMENTS
 	@Kroll.method
-	public void startPayments(KrollDict options)
+	public void initializePayments(KrollDict params) {
+		String publishableKey = params.getString("publishableKey");
+		PaymentConfiguration.init(TiApplication.getInstance().getApplicationContext(), publishableKey);
+
+		KrollDict event = new KrollDict();
+
+		event.put("success", true);
+
+		KrollFunction onComplete = (KrollFunction) params.get("onComplete");
+		onComplete.callAsync(getKrollObject(), event);
+	}
+	@Kroll.method
+	public void showPaymentSheet(KrollDict params) {
+		Log.w(LCAT, "showPaymentSheet()");
+
+		callback = (KrollFunction) params.get("onComplete");
+		String merchantDisplayName = params.getString("merchantDisplayName");
+		String customerId = params.getString("customerId");
+		String customerEphemeralKeySecret = params.getString("customerEphemeralKeySecret");
+		String paymentIntentClientSecret = params.getString("paymentIntentClientSecret");
+		String country = params.getString("country");
+		Boolean isSandbox = params.containsKey("isSandbox") ? (Boolean) params.get("isSandbox") : true;
+
+		if (callback == null || merchantDisplayName == null || customerId == null ||
+				customerEphemeralKeySecret == null || paymentIntentClientSecret == null) {
+			Log.e(
+					LCAT,
+					"Missing required parameters: callback, customerId, customerEphemeralKeySecret or paymentIntentClientSecret"
+			);
+			return;
+		}
+
+		params.remove("callback");
+		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), TiStripeHostActivity.class);
+		//intent.putExtra("params", params);
+		intent.putExtra("merchantDisplayName", merchantDisplayName);
+		intent.putExtra("customerId", customerId);
+		intent.putExtra("customerEphemeralKeySecret", customerEphemeralKeySecret);
+		intent.putExtra("paymentIntentClientSecret", paymentIntentClientSecret);
+		intent.putExtra("isSandbox", isSandbox);
+		intent.putExtra("country", country);
+
+		TiActivitySupport support = (TiActivitySupport) TiApplication.getInstance().getCurrentActivity();
+		support.launchActivityForResult(intent, support.getUniqueResultCode(), this);
+	}
+
+	@Override
+	public void onResult(Activity activity, int requestCode, int resultCode, Intent intent) {
+		boolean success = intent.getBooleanExtra("success", false);
+		boolean cancel = intent.getBooleanExtra("cancel", false);
+		String error = intent.getStringExtra("error");
+
+		KrollDict event = new KrollDict();
+
+		event.put("success", success);
+		event.put("cancel", cancel);
+		event.put("error", error);
+
+		callback.callAsync(getKrollObject(), event);
+	}
+
+	@Override
+	public void onError(Activity activity, int requestCode, Exception e) {
+		KrollDict event = new KrollDict();
+
+		event.put("success", false);
+		event.put("cancel", false);
+		event.put("error", e.getMessage());
+
+		callback.callAsync(getKrollObject(), event);
+	}
+
+	// My code starts here
+	// specific for gPay ?
+	@Kroll.method
+	public void showWalletSheet(KrollDict options)
 	{
 		// listen to broadcast event from StripeGooglePayActivity
 		LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).registerReceiver(myReceiverGooglePay, new IntentFilter("stripe:onGooglePay"));
 
-		Log.w(LCAT, "startPayments " );
-		Integer amount = options.containsKey("amount") ? (Integer) options.get("amount") : 0;
+		Log.w(LCAT, "showWalletSheet()" );
+		Integer amount = options.containsKey("amount") ? (Integer) options.get("amount") : 180;
 		String currency = options.containsKey("currency") ? (String) options.get("currency") : "usd";
 		String country = options.containsKey("country") ? (String) options.get("country") : "US";
 		String companyName = options.containsKey("companyName") ? (String) options.get("companyName") : "Fluid Market";
@@ -122,20 +204,9 @@ public class StripeModule extends KrollModule
 		String clientSecret = options.containsKey("clientSecret") ? (String) options.get("clientSecret") : "";
 		Boolean isSandbox = options.containsKey("isSandbox") ? (Boolean) options.get("isSandbox") : true;
 
-		//KrollFunction onComplete = (KrollFunction) options.get("onComplete");
-
-		Log.w(LCAT, "amount " + amount );
-		Log.w(LCAT, "currency " + currency );
-
-		Log.w(LCAT, "country " + country );
-		Log.w(LCAT, "companyName " + companyName );
-		Log.w(LCAT, "pk " + pk );
-		Log.w(LCAT, "clientSecret " + clientSecret );
-		Log.w(LCAT, "isSandbox " + isSandbox );
+		callback = (KrollFunction) options.get("onComplete");
 
 		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), StripeGooglePayActivity.class);
-		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 		intent.putExtra("amount", amount);
 		intent.putExtra("currency", currency);
 		intent.putExtra("country", country);
@@ -144,7 +215,9 @@ public class StripeModule extends KrollModule
 		intent.putExtra("clientSecret", clientSecret);
 		intent.putExtra("isSandbox", isSandbox);
 
-		TiApplication.getInstance().getApplicationContext().startActivity(intent);
+		//TiApplication.getInstance().getApplicationContext().startActivity(intent);
+		TiActivitySupport support = (TiActivitySupport) TiApplication.getInstance().getCurrentActivity();
+		support.launchActivityForResult(intent, support.getUniqueResultCode(), this);
 	}	
 
 
