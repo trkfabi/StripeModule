@@ -24,20 +24,9 @@ import android.content.IntentFilter;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.stripe.android.identity.*;
+import com.stripe.android.identity.IdentityVerificationSheet;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
-import androidx.activity.ComponentActivity;
 import android.app.Activity;
-import com.stripe.android.paymentsheet.PaymentSheet;
-import com.stripe.android.paymentsheet.PaymentSheetResult;
 import com.stripe.android.PaymentConfiguration;
 
 @Kroll.module(name="Stripe", id="com.inzori.stripe")
@@ -63,7 +52,7 @@ public class StripeModule extends KrollModule implements TiActivityResultHandler
 	@Kroll.onAppCreate
 	public static void onAppCreate(TiApplication app)
 	{
-		Log.w(LCAT, "inside onAppCreate 1");
+		//Log.w(LCAT, "inside onAppCreate 1");
 		// put module init code that needs to run when the application is created
 	}
 
@@ -81,9 +70,11 @@ public class StripeModule extends KrollModule implements TiActivityResultHandler
 
 		//KrollFunction onComplete = (KrollFunction) options.get("onComplete");
 
-		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), StripeActivity.class);
+		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), StripeIdentityActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+		//Log.w(LCAT, "start id: "+verificationSessionId+ " key: " + ephemeralKeySecret+ " logo " + logoUrl);
 		intent.putExtra("verificationSessionId", verificationSessionId);
 		intent.putExtra("ephemeralKeySecret", ephemeralKeySecret);
 		intent.putExtra("logoUrl", logoUrlAsset);
@@ -148,7 +139,7 @@ public class StripeModule extends KrollModule implements TiActivityResultHandler
 		}
 
 		params.remove("callback");
-		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), TiStripeHostActivity.class);
+		Intent intent = new Intent(TiApplication.getInstance().getApplicationContext(), StripePaymentSheetActivity.class);
 		//intent.putExtra("params", params);
 		intent.putExtra("merchantDisplayName", merchantDisplayName);
 		intent.putExtra("customerId", customerId);
@@ -218,7 +209,7 @@ public class StripeModule extends KrollModule implements TiActivityResultHandler
 		//TiApplication.getInstance().getApplicationContext().startActivity(intent);
 		TiActivitySupport support = (TiActivitySupport) TiApplication.getInstance().getCurrentActivity();
 		support.launchActivityForResult(intent, support.getUniqueResultCode(), this);
-	}	
+	}
 
 
 //	BroadcastReceiver myReceiverGooglePay = new BroadcastReceiver() {
@@ -242,5 +233,7 @@ public class StripeModule extends KrollModule implements TiActivityResultHandler
 //			LocalBroadcastManager.getInstance(TiApplication.getInstance().getApplicationContext()).unregisterReceiver(myReceiverGooglePay);
 //		}
 //	};
+
+
 }
 

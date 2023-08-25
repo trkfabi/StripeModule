@@ -35,7 +35,7 @@ public class StripeGooglePayActivity extends ComponentActivity
 
         //Log.w(LCAT, "GooglePayActivity onCreate " );
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setTitle("");
 
         Intent intent = getIntent();

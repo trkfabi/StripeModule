@@ -4,27 +4,26 @@ package com.inzori.stripe;
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
-import org.appcelerator.titanium.view.TiCompositeLayout;
 
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Window;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.stripe.android.identity.*;
+import com.stripe.android.identity.IdentityVerificationSheet;
 
 
-public class StripeActivity extends AppCompatActivity
+public class StripeIdentityActivity extends AppCompatActivity
 {
-    private static final String LCAT = "StripeActivity";
+    private static final String LCAT = "StripeIdentityActivity";
 
-    protected TiCompositeLayout layout = null;
     private IdentityVerificationSheet identityVerificationSheet;
 
-    public StripeActivity()
+    public StripeIdentityActivity()
     {
         super();
     }
@@ -33,14 +32,17 @@ public class StripeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //Log.w(LCAT,"stripeActivity onCreate override");
-        layout = new TiCompositeLayout(this);
-        setContentView(layout);
+        Log.w(LCAT,"StripeIdentityActivity onCreate");
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setTitle("");
 
         Intent intent = getIntent();
         String logoUrl = intent.getStringExtra("logoUrl");
         String verificationSessionId = intent.getStringExtra("verificationSessionId");
         String ephemeralKeySecret = intent.getStringExtra("ephemeralKeySecret");
+
+        Log.w(LCAT,"StripeIdentityActivity onCreate logo: " + logoUrl);
 
         identityVerificationSheet = IdentityVerificationSheet.Companion.create(
                 this,
@@ -76,6 +78,7 @@ public class StripeActivity extends AppCompatActivity
                 }
         );
 
+        Log.w(LCAT,"StripeIdentityActivity onCreate will present");
         identityVerificationSheet.present(
                 verificationSessionId,
                 ephemeralKeySecret

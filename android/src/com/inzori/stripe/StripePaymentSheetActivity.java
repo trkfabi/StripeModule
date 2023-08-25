@@ -1,37 +1,36 @@
 package com.inzori.stripe;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import androidx.activity.ComponentActivity;
 import com.stripe.android.paymentsheet.PaymentSheet;
 import com.stripe.android.paymentsheet.PaymentSheetResult;
-import com.stripe.android.googlepaylauncher.GooglePayEnvironment;
+
 import java.util.HashMap;
 import org.appcelerator.kroll.common.Log;
 import android.content.res.Configuration;
 
-public class TiStripeHostActivity extends ComponentActivity {
+public class StripePaymentSheetActivity extends ComponentActivity {
     private PaymentSheet paymentSheet;
     private HashMap<?, ?> params;
 
-    private static final String LCAT = "TiStripeHostActivity";
+    private static final String LCAT = "StripePaymentSheetActivity";
 
-    public TiStripeHostActivity()
+    public StripePaymentSheetActivity()
     {
         super();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.w(LCAT, "TiStripeHostActivity onCreate " );
+        Log.w(LCAT, "StripePaymentSheetActivity onCreate " );
         super.onCreate(savedInstanceState);
 
         // Configure activity layout (in addition to the style)
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setTitle("");
 
         paymentSheet = new PaymentSheet(this, this::onPaymentSheetResult);
@@ -53,10 +52,10 @@ public class TiStripeHostActivity extends ComponentActivity {
         );
 
         PaymentSheet.GooglePayConfiguration googlePayConfiguration =
-            new PaymentSheet.GooglePayConfiguration(
-                    isSandbox ? PaymentSheet.GooglePayConfiguration.Environment.Test: PaymentSheet.GooglePayConfiguration.Environment.Production,
-                    country
-            );
+                new PaymentSheet.GooglePayConfiguration(
+                        isSandbox ? PaymentSheet.GooglePayConfiguration.Environment.Test: PaymentSheet.GooglePayConfiguration.Environment.Production,
+                        country
+                );
 
         PaymentSheet.Configuration.Builder configurationBuilder = new PaymentSheet.Configuration.Builder(merchantDisplayName)
                 .customer(customerConfig)
@@ -121,7 +120,7 @@ public class TiStripeHostActivity extends ComponentActivity {
     @Override
     protected void onStart()
     {
-        Log.w(LCAT, "TiStripeHostActivity onStart" );
+        Log.w(LCAT, "StripePaymentSheetActivity onStart" );
         super.onStart();
     }
 
@@ -141,5 +140,5 @@ public class TiStripeHostActivity extends ComponentActivity {
     protected void onDestroy()
     {
         super.onDestroy();
-    }    
+    }
 }
